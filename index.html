@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verso l'automazione del ragionamento</title>
+    <title>Verso l'automazione del ragionamento legale</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: #f4f4f4;
-            background: url('img1.png') no-repeat center center;
+            background: url('img.png') no-repeat center center;
             background-size: cover;
         }
         
@@ -19,7 +21,7 @@
             flex-direction: column; /* Allinea i bottoni in verticale */
             justify-content: flex-start; /* Allinea i bottoni all'inizio */
             align-items: center; /* Allinea i bottoni al centro orizzontalmente */
-            margin-top: 30rem; /* Altezza minima sopra la navbar */
+            margin-top: 35%; /* Altezza minima sopra la navbar */
         }
 
         section {
@@ -29,19 +31,33 @@
             border-radius: 0px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
         }
+
+        .eb-garamond-h1 {
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            position: absolute;
+            top: 15%;
+            left: 5%;
+            font-size: 7vw; /* Dimensione del titolo */
+            color: #323232; /* Colore del testo del titolo */
+            line-height: 1.1;
+        }
+
         .buttons-container {
             position: absolute;
-            top: 20.3rem;
-            left: 16.8%;
+            top: 52%;
+            left: 15.8%;
             transform: translateX(-50%);
             display: flex;
         }
         .buttons-container button {
-            padding: 1rem 2rem;
+            padding: 1vw 2.8vw;
             cursor: pointer;
             border-radius: 5px;
-            font-size: 1rem;
-            margin: 0 1rem; 
+            font-size: 1.2vw;
+            margin: 0 1vw; 
             transition: background-color 0.3s, border-color 0.3s; /* Aggiunge transizioni per il colore di sfondo e il bordo */
 
         }
@@ -72,6 +88,9 @@
 
 <main>
     <section>
+        <div class="eb-garamond-h1">
+            Verso l'automazione del <br> Ragionamento Legale
+        </div>
     </section>
 
     <div class="buttons-container">
