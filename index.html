@@ -15,13 +15,21 @@
             background: url('img.png') no-repeat center center;
             background-size: cover;
         }
+
+        @media screen and (max-width: 768px) {
+            body {
+                background-size: 200%; /* Cambia la dimensione dello sfondo per adattarsi meglio alle dimensioni dello schermo più piccole */
+                background-position: center center;
+            }
+        }
+
         
         main {
             display: flex;
             flex-direction: column; /* Allinea i bottoni in verticale */
             justify-content: flex-start; /* Allinea i bottoni all'inizio */
             align-items: center; /* Allinea i bottoni al centro orizzontalmente */
-            margin-top: 35%; /* Altezza minima sopra la navbar */
+            margin-top: 28rem; /* Altezza minima sopra la navbar */
         }
 
         section {
