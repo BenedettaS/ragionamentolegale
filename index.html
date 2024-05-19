@@ -3,84 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verso l'automazione del ragionamento legale</title>
+    <title>Verso l'automazione del ragionamento</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background: url('img1.png') no-repeat center center;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 1rem;
-            text-align: center;
+        
+        main {
+            display: flex;
+            flex-direction: column; /* Allinea i bottoni in verticale */
+            justify-content: flex-start; /* Allinea i bottoni all'inizio */
+            align-items: center; /* Allinea i bottoni al centro orizzontalmente */
+            margin-top: 30rem; /* Altezza minima sopra la navbar */
         }
-        nav {
-            background-color: #444;
-            color: white;
-            padding: 0.5rem;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
+
         section {
             padding: 2rem;
             margin: 1rem;
-            background-color: white;
+            background-color: rgba(68, 68, 68, 0.0);
+            border-radius: 0px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+        }
+        .buttons-container {
+            position: absolute;
+            top: 19.5rem;
+            left: 35%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+        .buttons-container button {
+            padding: 1rem 2rem;
+            cursor: pointer;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            margin: 0 1rem; 
+            transition: background-color 0.3s, border-color 0.3s; /* Aggiunge transizioni per il colore di sfondo e il bordo */
+
         }
-        footer {
-            background-color: #333;
+        .buttons-container button:last-child {
+            margin-right: 0; /* Rimuove il margine a destra per l'ultimo bottone */
+        }
+        .button-articoli {
             color: white;
-            text-align: center;
-            padding: 1rem;
-            width: 100%;
-            bottom: 0;
+            border-color: #0e1030;
+            background-color: #0e1030; /* Colore blu per il bottone Articoli */
         }
+
+        .button-sentenze {
+            color: #0e1030;
+            border-color: #0e1030;
+            background-color: rgba(255, 255, 255, 0.0); /* Colore rosso per il bottone Sentenze */
+        }
+        .buttons-container button:hover {
+            background-color: #12164ea9;
+            color: white;
+            border-color: transparent;
+        }
+        
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Verso l'automazione del ragionamento legale</h1>
-</header>
 
-<nav>
-    <a href="#articoli">Articoli</a>
-    <a href="#sentenze">Sentenze</a>
-    <a href="#codice-asp">Codice ASP</a>
-    <a href="#codice-ilasp">Codice ILASP</a>
-</nav>
+<main>
+    <section>
+    </section>
 
-<section id="articoli">
-    <h2>Articoli</h2>
-    <p>Articoli del Titolo Dodicesimo del Libro Secondo del Codice Penale Italiano</p>
-</section>
-
-<section id="sentenze">
-    <h2>Sentenze</h2>
-    <p>Questa sezione include una collezione di sentenze legali rilevanti. Le sentenze sono organizzate per data e categoria per una facile consultazione.</p>
-</section>
-
-<section id="codice-asp">
-    <h2>Codice ASP</h2>
-    <p>In questa sezione sono trascritte le sentenze in codice ASP</p>
-</section>
-
-<section id="codice-ilasp">
-    <h2>Codice ILASP</h2>
-    <p>In questa sezione trovi esempi di codice ILASP (Inductive Logic ASP). Ecco un esempio:</p>
-</section>
-
-<footer>
-    <p>&copy; 2024 Verso l'automazione del ragionamento legale. Tutti i diritti riservati.</p>
-</footer>
+    <div class="buttons-container">
+    <button class="button-articoli" onclick="location.href='articoli.html'">Articoli</button>
+    <button class="button-sentenze" onclick="location.href='sentenze.html'">Sentenze</button>
+    </div>
+</main>
 
 </body>
 </html>
