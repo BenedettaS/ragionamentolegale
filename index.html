@@ -7,28 +7,27 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Evita lo scrolling */
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
-            background: url('img.png') no-repeat center center;
-            background-size: cover;
+            background: url('img.png') no-repeat center center fixed; /* Aggiungi fixed per fissare l'immagine di sfondo */
+            background-size: cover; /* Assicura che l'immagine copra l'intero viewport */
         }
 
-        @media screen and (max-width: 768px) and (min-width: 460px) {
-            body {
-                background-size: 230%; /* Cambia la dimensione dello sfondo per adattarsi meglio alle dimensioni dello schermo più piccole */
-                background-position: center center;
-            }
-        }
-        
         main {
             display: flex;
-            flex-direction: column; /* Allinea i bottoni in verticale */
-            justify-content: flex-start; /* Allinea i bottoni all'inizio */
-            align-items: center; /* Allinea i bottoni al centro orizzontalmente */
-            margin-top: 28rem; /* Altezza minima sopra la navbar */
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 35%;
         }
 
         section {
@@ -47,83 +46,101 @@
             position: absolute;
             top: 15%;
             left: 5%;
-            font-size: 7vw; /* Dimensione del titolo */
-            color: #323232; /* Colore del testo del titolo */
+            font-size: 7vw;
+            color: #323232;
             line-height: 1.1;
         }
 
         .buttons-container {
             position: absolute;
             top: 52%;
-            left: 15.8%;
+            left: 16.2%;
             transform: translateX(-50%);
             display: flex;
         }
+
         .buttons-container button {
             padding: 1vw 2.8vw;
             cursor: pointer;
             border-radius: 5px;
             font-size: 1.2vw;
-            margin: 0 1vw; 
-            transition: background-color 0.3s, border-color 0.3s; /* Aggiunge transizioni per il colore di sfondo e il bordo */
+            margin: 0 1vw;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
 
-        }
         .buttons-container button:last-child {
-            margin-right: 0; /* Rimuove il margine a destra per l'ultimo bottone */
+            margin-right: 0;
         }
+
         .button-articoli {
             color: white;
             border-color: #0e1030;
-            background-color: #0e1030; /* Colore blu per il bottone Articoli */
+            background-color: #0e1030;
         }
 
         .button-sentenze {
             color: #0e1030;
             border-color: #0e1030;
-            background-color: rgba(255, 255, 255, 0.0); /* Colore rosso per il bottone Sentenze */
+            background-color: rgba(255, 255, 255, 0.0);
         }
+
         .buttons-container button:hover {
             background-color: #12164ea9;
             color: white;
             border-color: transparent;
         }
 
-        @media screen and (max-width: 460px) {
+        @media screen and (max-width: 768px) {
             body {
-                background-size: 430%; /* Cambia la dimensione dello sfondo per adattarsi meglio alle dimensioni dello schermo più piccole */
-                background-position: center center;
+                background-size: cover; /* Assicura che l'immagine copra l'intero viewport anche su schermi più piccoli */
             }
-            .eb-garamond-h1{
+
+            .eb-garamond-h1 {
                 font-size: 10vw;
             }
 
-            .buttons-container{
-                top: 52%;
-                left: 25.8%;
+            .buttons-container {
+                top: 50%;
+                left: 23%;
             }
 
-            .buttons-container button{
+            .buttons-container button {
+                font-size: 3vw;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            body {
+                background-size: cover;
+            }
+
+            .eb-garamond-h1 {
+                font-size: 12vw;
+            }
+
+            .buttons-container {
+                top: 65%;
+                left: 50%;
+            }
+
+            .buttons-container button {
                 font-size: 4vw;
             }
         }
-        
     </style>
 </head>
 <body>
+    <main>
+        <section>
+            <div class="eb-garamond-h1">
+                Verso l'automazione del <br> Ragionamento Legale
+            </div>
+        </section>
 
-
-<main>
-    <section>
-        <div class="eb-garamond-h1">
-            Verso l'automazione del <br> Ragionamento Legale
+        <div class="buttons-container">
+            <button class="button-articoli" onclick="location.href='articoli.html'">Articoli</button>
+            <button class="button-sentenze" onclick="location.href='sentenze.html'">Sentenze</button>
         </div>
-    </section>
-
-    <div class="buttons-container">
-    <button class="button-articoli" onclick="location.href='articoli.html'">Articoli</button>
-    <button class="button-sentenze" onclick="location.href='sentenze.html'">Sentenze</button>
-    </div>
-</main>
-
+    </main>
 </body>
 </html>
