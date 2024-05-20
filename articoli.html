@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articoli</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('img.png') no-repeat center center fixed; 
+            background-size: cover; 
+        }
+
+        nav {
+            width: 100%;
+            background: #0e1030;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 2rem;
+            padding: 0.5vw 2.0vw;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            background-color: #12164ea9;
+            color: white;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            margin-top: 4rem;
+        }
+
+        section {
+            padding: 2rem;
+            width: 100vw;
+            max-width: 1100px;
+            background-color: rgba(68, 68, 68, 0.3);
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            margin-top: 2rem;
+        }
+
+        .eb-garamond-h1 {
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 5vw;
+            color: #323232;
+            line-height: 1.1;
+            margin-top: 2rem;
+        }
+
+        .code-section {
+            margin-top: 1rem;
+            padding: 1rem;
+        }
+
+        .code-section h2 {
+            font-size: 1.5rem;
+            color: #0e1030;
+            margin-bottom: 0.5rem;
+        }
+
+        .code-section pre {
+            background-color: rgba(244, 244, 244, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 1rem;
+            font-family: "Courier New", Courier, monospace;
+            max-width: 100%;
+            white-space: pre-wrap;
+            text-align: left;
+            margin-bottom: 0rem;
+        }
+
+        .center-text {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .highlight {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: block;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            font-family: "Source Code Pro", "Courier New", Courier, monospace;
+        }
+        
+
+        @media screen and (max-width: 768px) {
+            body {
+                background-size: cover; 
+            }
+
+            .eb-garamond-h1 {
+                font-size: 10vw;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            body {
+                background-size: cover;
+            }
+
+            .eb-garamond-h1 {
+                font-size: 12vw;
+            }
+
+            nav a {
+                margin: 0 1rem;
+                font-size: 1rem;
+            }
+
+            .code-section h2 {
+                font-size: 1.1rem;
+            }
+
+            .code-section pre {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="sentenze.html">Sentenze</a>
+    </nav>
+
+    <main>
+        <div class="eb-garamond-h1">
+            Articoli del Codice Penale italiano
+        </div>
+
+        <section>
+            <div class="code-section">
+                <h2>Articolo 581</h2>
+                <pre>
+<span class="center-text"><b>Codice Penale Art. 581 - Percosse</b></span>
+Chiunque percuote taluno, se dal fatto non deriva una malattia nel corpo o nella mente, è punito, a querela della persona offesa, salvo che ricorra la circostanza aggravante prevista dall'art. 61, numero 11-octies), 
+con la reclusione fino a sei mesi o con la multa fino a euro 309.        
+Tale disposizione non si applica quando la legge considera la violenza come elemento costitutivo o come circostanza aggravante di un altro reato [294, 336, 337, 338, 341, 342, 343, 353, 385, 386, 393, 405, 507, 
+584, 610, 611, 614 4, 628, 629, 634, 635].    
+
+<span class="highlight">reo(R, "beatings") :- beatings(R, V).
+victim(V, "beatings") :- beatings(R, V).
+
+beatings(R, V) :- damage(R, V), harmful_intention(R), not derive_illness(V), agent(R), agent(V), R!=V.</span>
+                </pre>
+            </div>
+            <div class="code-section">
+                <h2>Articolo 582</h2>
+                <pre>
+<span class="center-text"><b>Codice Penale Art. 582 - Lesione personale</b></span>
+Chiunque cagiona ad  alcuno  una  lesione  personale,  dalla  quale deriva una malattia nel  corpo  o  nella mente, è punito  con  la reclusione da sei mesi a tre anni. 
+Si procede tuttavia d'ufficio se ricorre taluna delle circostanze aggravanti previste negli articoli 583, 583 quater, secondo comma, primo periodo, e 585, ad eccezione di quelle indicate nel primo comma, numero 1), e nel secondo comma dell'articolo 577. Si procede altresì d'ufficio se la malattia ha una durata superiore a venti giorni quando il fatto è commesso contro persona incapace, per età o per infermità.
+
+<span class="highlight">illness(I) :- physical_illness(I).
+illness(I) :- mental_illness(I).
+    
+reo(R, "personal_injuries") :- personal_injuries(R, V, I).
+victim(V, "personal_injuries") :- personal_injuries(R, V, I).
+
+personal_injuries(R, V, I) :- damage(R, V), harmful_intention(R), derive_illness(V), derive(V, I), agent(R), agent(V), illness(I), R!=V.</span>
+            </pre>
+            </div>
+            <div class="code-section">
+                <h2>Articolo 583</h2>
+                <pre>
+<span class="center-text"><b>Codice Penale Art. 583 - Circostanze aggravanti</b></span>
+La lesione personale (582) è grave, e si applica la reclusione da tre a sette anni:
+1) se dal fatto deriva una malattia che metta in pericolo la vita della persona offesa, ovvero una malattia o un'incapacità di attendere alle ordinarie occupazioni per un tempo superiore ai quaranta giorni;
+2) se il fatto produce l'indebolimento permanente di un senso o di un organo
+
+La lesione personale (582) è gravissima, e si applica la reclusione da sei a dodici anni, se dal fatto deriva:
+1) una malattia certamente o probabilmente insanabile;
+2) la perdita di un senso;
+3) la perdita di un arto, o una mutilazione che renda l'arto inservibile, ovvero la perdita dell'uso di un organo o della capacità di procreare, ovvero una permanente e grave difficoltà della favella
+
+<span class="highlight">reo(R, "serious_personal_injuries") :- serious_personal_injuries(R, V, I, "lesioni gravi").
+victim(V, "serious_personal_injuries") :- serious_personal_injuries(R, V, I, "lesioni gravi").
+    
+reo(R, "serious_personal_injuries") :- serious_personal_injuries(R, V, I, "lesioni gravissime").
+victim(V, "serious_personal_injuries") :- serious_personal_injuries(R, V, I, "lesioni gravissime").
+
+functionality(F) :- sense(F).
+functionality(F) :- limb(F).
+functionality(F) :- organ(F).
+functionality(F) :- procreate(F).
+functionality(F) :- speach(F).
+
+serious_personal_injuries(R, V, I, "lesioni gravi") :- personal_injuries(R, V, I), severity(2).
+serious_personal_injuries(R, V, I, "lesioni gravi") :- personal_injuries(R, V, I), weakening(V, F), functionality(F). % W è un senso o un arto.
+
+serious_personal_injuries(R, V, I, "lesioni gravissime") :- personal_injuries(R, V, I), severity(3).
+serious_personal_injuries(R, V, I, "lesioni gravissime") :- personal_injuries(R, V, I), loss(V, F), functionality(F).</span>
+                </pre>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
