@@ -179,18 +179,30 @@
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 24/04/1987, n.5087</b></span>
-Qualora a seguito di un’aggressione, la vittima riporti una alterazione psicopatica che è in rapporto diretto di causalità con la condotta dell’agente, questi risponde di lesioni personali aggravate se la malattia derivata da esse presenta un carattere insanabile, a nulla rilevando i preesistenti stati patologici della vittima, allorché sia accertato che il trauma ad essa inferto abbia posto in luce tale preesistente patologia. In tale ipotesi non può dirsi che l’azione criminosa sia solo occasione delle gravi conseguenze manifestatesi, ma deve ritenersene sicuro il contributo causale.
+Qualora a seguito di un'aggressione, la vittima riporti una alterazione psicopatica che è in rapporto diretto di causalità con la condotta dell'agente, questi risponde di lesioni personali aggravate se la malattia derivata da esse presenta un carattere insanabile, a nulla rilevando i preesistenti stati patologici della vittima, allorché sia accertato che il trauma ad essa inferto abbia posto in luce tale preesistente patologia. In tale ipotesi non può dirsi che l'azione criminosa sia solo occasione delle gravi conseguenze manifestatesi, ma deve ritenersene sicuro il contributo causale.
 <span class="highlight">harmful_intention("R").
 mental_illness("alterazione psicopatica").
 derive_illness("V").
 derive("V", "alterazione psicopatica").
 damage("R", "V").
-severity(3).</span></pre>
+severity(3).</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "alterazione psicopatica", "lesioni gravissime")
+    },{
+        serious_personal_injuries("R", "V", "alterazione psicopatica", "lesioni gravi")
+    },{
+        harmful_intention("R").
+        mental_illness("alterazione psicopatica").
+        damage("R", "V").
+        derive_illness("V").
+        derive("V", "alterazione psicopatica").
+        severity(3).
+    }). </span></pre>
             </div>
             <div class="code-section">
                 <pre>
-<span class="center-text"><b> Cassazione penale sez. IV, 13/10/1988, n.9933</b></span>
-In tema di malattie professionali, la contrazione della malattia denominata silicosi, ritenuta sicuramente sclerogena in conseguenza alla prolungata esposizione in ambiente di lavoro inquinato da polveri aereodiffuse contenenti particelle di quarzo, comportando una grave compromissione degli organi deputati alla funzione respiratoria, integra l’aggravante dell’indebolimento permanente di un senso o di un organo (di cui all’art. 583, primo comma, n. 2, c.p.).
+<span class="center-text"><b>Cassazione penale sez. IV, 13/10/1988, n.9933</b></span>
+In tema di malattie professionali, la contrazione della malattia denominata silicosi, ritenuta sicuramente sclerogena in conseguenza alla prolungata esposizione in ambiente di lavoro inquinato da polveri aereodiffuse contenenti particelle di quarzo, comportando una grave compromissione degli organi deputati alla funzione respiratoria, integra l'aggravante dell'indebolimento permanente di un senso o di un organo (di cui all'art. 583, primo comma, n. 2, c.p.).
 <span class="highlight">illness("silicosi").
 derive_illness("V").
 derive("V","silicosi").
@@ -198,19 +210,43 @@ harmful_intention("R").
 caused_by("R", "V", "particelle di quarzo", "silicosi").
 substance("particelle di quarzo").
 weakening("V", "organi respiratori").
-organ("organi respiratori").</span></pre>
+organ("organi respiratori").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "silicosi", "lesioni gravi"),
+        damage("R", "V")
+    },{
+
+    },{
+        illness("silicosi").
+        derive_illness("V").
+        derive("V","silicosi").
+        harmful_intention("R").
+        caused_by("R", "V", "particelle di quarzo", "silicosi").
+        substance("particelle di quarzo").
+        weakening("V", "organi respiratori").
+        organ("organi respiratori").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 24/10/1991, n.10644</b></span>
-La totale perdita della milza costituisce non già indebolimento del sistema reticolo-endoteliare, ma perdita dell’uso di un organo, che integra l’ipotesi di lesione gravissima prevista dall’art. 583, secondo comma, n. 2, c.p., e ciò perché le numerose funzioni cui assolve la milza, sebbene tutte perfettamente compensabili, non possono tuttavia ritenersi propriamente vicariate, nella loro entità globale, da singole attività svolte separatamente da organi diversi.
+La totale perdita della milza costituisce non già indebolimento del sistema reticolo-endoteliare, ma perdita dell'uso di un organo, che integra l'ipotesi di lesione gravissima prevista dall'art. 583, secondo comma, n. 2, c.p., e ciò perché le numerose funzioni cui assolve la milza, sebbene tutte perfettamente compensabili, non possono tuttavia ritenersi propriamente vicariate, nella loro entità globale, da singole attività svolte separatamente da organi diversi.
 <span class="highlight">personal_injuries("R", "V", "perdita milza").
 loss("V", "milza").
-organ("milza").</span></pre>
+organ("milza").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "perdita milza", "lesioni gravissime")
+    },{
+        serious_personal_injuries("R", "V", "perdita milza", "lesioni gravi")
+    },{
+        personal_injuries("R", "V", "perdita milza").
+        loss("V", "milza").
+        organ("milza").
+    }).</span></pre>
 </div>
             <div class="code-section">
                 <pre>
-<span class="center-text"><b>Cassazione penale sez. V, 12/04/1994, n.4130 </b></span>
+<span class="center-text"><b>Cassazione penale sez. V, 12/04/1994, n.4130</b></span>
 In tema di lesioni personali, costituisce "malattia" qualsiasi alterazione anatomica o funzionale dell'organismo, ancorché localizzata, di lieve entità e non influente sulle condizioni organiche generali, onde lo stato di malattia perdura fino a quando sia in atto il suddetto processo di alterazione. (Fattispecie relativa ad escoriazioni).
 <span class="highlight">personal_injuries("R", "V", "perdita occhio").
 weakening("V", "vista").
@@ -243,19 +279,100 @@ organ("reni").
     
 personal_injuries("R", "V", "perdita testicoli").
 loss("V", "testicoli").
-procreate("testicoli").</span></pre>
+procreate("testicoli").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "perdita occhio", "lesioni gravi")
+    },{
+        serious_personal_injuries("R", "V", "perdita occhio", "lesioni gravissime"),
+        loss("V","vista"),
+        loss("V","occhio")
+    },{
+        personal_injuries("R", "V", "perdita occhio").
+        weakening("V", "vista").
+        sense("vista").
+        weakening("V", "occhio").
+        organ("occhio").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "perdita rene", "lesioni gravi")
+    },{
+        serious_personal_injuries("R", "V", "perdita rene", "lesioni gravissime"),
+        loss("V","rene")
+    },{
+        personal_injuries("R", "V", "perdita rene").
+        weakening("V", "rene").
+        organ("rene").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "perdita testicolo", "lesioni gravi")
+    },{
+        serious_personal_injuries("R", "V", "perdita testicolo", "lesioni gravissime"),
+        loss("V","testicolo")
+    },{
+        personal_injuries("R", "V", "perdita testicolo").
+        weakening("V", "testicolo").
+        organ("testicolo").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "perdita occhi", "lesioni gravissime")
+    },{
+        serious_personal_injuries("R", "V", "perdita occhi", "lesioni gravi"),
+        weakening("V","occhi")
+    },{
+        personal_injuries("R", "V", "perdita occhi").
+        loss("V", "occhi").
+        organ("occhi").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "perdita reni", "lesioni gravissime")
+    },{
+        serious_personal_injuries("R", "V", "perdita reni", "lesioni gravi"),
+        weakening("V","reni")
+    },{
+        personal_injuries("R", "V", "perdita reni").
+        loss("V", "reni").
+        organ("reni").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "perdita testicoli", "lesioni gravissime")
+    },{
+        serious_personal_injuries("R", "V", "perdita testicoli", "lesioni gravi"),
+        weakening("V","testicoli")
+    },{
+        personal_injuries("R", "V", "perdita testicoli").
+        loss("V", "testicoli").
+        procreate("testicoli").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 26/06/2013, n.27986</b></span>
-In tema di lesioni personali, anche una menomazione minima, purché apprezzabile di un organo integra l’aggravante di cui all’art. 583, comma primo, n. 2, c.p.. (Fattispecie in cui la Corte ha ritenuto sussistente l’aggravante in presenza di plurime fratture dentarie da cui era derivato un indebolimento permanente dell’organo della masticazione).
+In tema di lesioni personali, anche una menomazione minima, purché apprezzabile di un organo integra l'aggravante di cui all'art. 583, comma primo, n. 2, c.p.. (Fattispecie in cui la Corte ha ritenuto sussistente l'aggravante in presenza di plurime fratture dentarie da cui era derivato un indebolimento permanente dell'organo della masticazione).
 <span class="highlight">illness("frattura").
 derive_illness("V").
 derive("V","frattura").
 harmful_intention("R").
 damage("R", "V").
 weakening("V", "masticazione").
-organ("masticazione").</span></pre>
+organ("masticazione").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "frattura", "lesioni gravi")
+    },{
+        serious_personal_injuries("R", "V", "frattura", "lesioni gravissime")
+    },{
+        illness("frattura").
+        derive_illness("V").
+        derive("V","frattura").
+        harmful_intention("R").
+        damage("R", "V").
+        weakening("V", "masticazione").
+        organ("masticazione").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -267,7 +384,20 @@ derive("V","acufene").
 harmful_intention("R").
 damage("R", "V").
 weakening("V", "udito").
-sense("udito").</span></pre>
+sense("udito").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "acufene", "lesioni gravi")
+    },{
+        serious_personal_injuries("R", "V", "acufene", "lesioni gravissime")
+    },{
+        illness("acufene").
+        derive_illness("V").
+        derive("V","acufene").
+        harmful_intention("R").
+        damage("R", "V").
+        weakening("V", "udito").
+        sense("udito").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -279,7 +409,21 @@ derive("V","illness").
 harmful_intention("R").
 avulsion("R", "V", "dente").
 organ("dente").
-weakening("V", "dente").</span></pre>
+weakening("V", "dente").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "illness", "lesioni gravi"),
+        damage("R", "V")
+    },{
+        serious_personal_injuries("R", "V", "illness", "lesioni gravissime")
+    },{
+        illness("illness").
+        derive_illness("V").
+        derive("V","illness").
+        harmful_intention("R").
+        avulsion("R", "V", "dente").
+        organ("dente").
+        weakening("V", "dente").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -292,7 +436,20 @@ derive("V","dolenzia").
 harmful_intention("R").
 damage("R", "V").
 weakening("V", "arto").
-limb("arto").</span></pre>
+limb("arto").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "dolenzia", "lesioni gravi")
+    },{
+        serious_personal_injuries("R", "V", "dolenzia", "lesioni gravissime")
+    },{
+        illness("dolenzia").
+        derive_illness("V").
+        derive("V","dolenzia").
+        harmful_intention("R").
+        damage("R", "V").
+        weakening("V", "arto").
+        limb("arto").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -320,7 +477,87 @@ d)  weakening("V", "tatto").
     sense("tatto").
     
 e)  weakening("V", "gusto").
-    sense("gusto").</span></pre>
+    sense("gusto").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "illness", "lesioni gravi"),
+        damage("R", "V")
+    },{
+        serious_personal_injuries("R", "V", "illness", "lesioni gravissime")
+    },{
+        use_object("R", "V", "oggetto").
+        blunt("oggetto").
+        harmful_intention("R").
+        illness("illness").
+        derive_illness("V").
+        derive("V", "illness").
+        weakening("V", "udito").
+        sense("udito").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "illness", "lesioni gravi"),
+        damage("R", "V")
+    },{
+        serious_personal_injuries("R", "V", "illness", "lesioni gravissime")
+    },{
+        use_object("R", "V", "oggetto").
+        blunt("oggetto").
+        harmful_intention("R").
+        illness("illness").
+        derive_illness("V").
+        derive("V", "illness").
+        weakening("V", "vista").
+        sense("vista").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "illness", "lesioni gravi"),
+        damage("R", "V")
+    },{
+        serious_personal_injuries("R", "V", "illness", "lesioni gravissime")
+    },{
+        use_object("R", "V", "oggetto").
+        blunt("oggetto").
+        harmful_intention("R").
+        illness("illness").
+        derive_illness("V").
+        derive("V", "illness").
+        weakening("V", "olfatto").
+        sense("olfatto").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "illness", "lesioni gravi"),
+        damage("R", "V")
+    },{
+        serious_personal_injuries("R", "V", "illness", "lesioni gravissime")
+    },{
+        use_object("R", "V", "oggetto").
+        blunt("oggetto").
+        harmful_intention("R").
+        illness("illness").
+        derive_illness("V").
+        derive("V", "illness").
+        weakening("V", "tatto").
+        sense("tatto").
+    }).
+
+#pos({
+        serious_personal_injuries("R", "V", "illness", "lesioni gravi"),
+        damage("R", "V")
+    },{
+        serious_personal_injuries("R", "V", "illness", "lesioni gravissime")
+    },{
+        use_object("R", "V", "oggetto").
+        blunt("oggetto").
+        harmful_intention("R").
+        illness("illness").
+        derive_illness("V").
+        derive("V", "illness").
+        weakening("V", "gusto").
+        sense("gusto").
+    }).
+</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -332,7 +569,20 @@ derive("V", "lussazione").
 damage("R", "V").
 weakening("V", "arto").
 limb("arto").
-harmful_intention("R").</span></pre>
+harmful_intention("R").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "lussazione", "lesioni gravi")
+    },{
+        serious_personal_injuries("R", "V", "lussazione", "lesioni gravissime")
+    },{
+        illness("lussazione").
+        derive_illness("V").
+        derive("V", "lussazione").
+        damage("R", "V").
+        weakening("V", "arto").
+        limb("arto").
+        harmful_intention("R").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -340,7 +590,16 @@ harmful_intention("R").</span></pre>
 In tema di lesioni personali, sussiste l'aggravante dell'indebolimento permanente di un organo qualora, in conseguenza del fatto lesivo, qualora esso risulti menomato nella sua potenzialità funzionale, ridotta rispetto allo stato anteriore, a nulla rilevando il fatto del minore o maggiore grado di menomazione. Sussiste, dunque, la piena configurazione dell'aggravante, laddove la persona offesa abbia riportato una ridotta funzionalità del timpano sinistro in maniera, seppur lieve, irreversibile.
 <span class="highlight">personal_injuries("R", "V", "illness").
 weakening("V", "timpano").
-organ("timpano").</span></pre>
+organ("timpano").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "illness", "lesioni gravi")
+    },{
+        serious_personal_injuries("R", "V", "illness", "lesioni gravissime")
+    },{
+        personal_injuries("R", "V", "illness").
+        weakening("V", "timpano").
+        organ("timpano").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -352,7 +611,21 @@ derive_illness("V").
 derive("V", "lesione").
 hands_around_throat("R", "V").
 hit("R", "V").
-harmful_intention("R").</span></pre>
+harmful_intention("R").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "lesione", "lesioni gravi"),
+        damage("R", "V")
+    },{
+        serious_personal_injuries("R", "V", "lesione", "lesioni gravissime")
+    },{
+        severity(2).
+        illness("lesione").
+        derive_illness("V").
+        derive("V", "lesione").
+        hands_around_throat("R", "V").
+        hit("R", "V").
+        harmful_intention("R").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -363,7 +636,19 @@ severity(3). % untreatable_illness
 derive_illness("V").
 derive("V", "H.I.V.").
 damage("R", "V").
-harmful_intention("R").</span></pre>
+harmful_intention("R").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        serious_personal_injuries("R", "V", "H.I.V.", "lesioni gravissime")
+    },{
+        serious_personal_injuries("R", "V", "H.I.V.", "lesioni gravi")
+    },{
+        illness("H.I.V.").
+        severity(3). % untreatable_illness
+        derive_illness("V").
+        derive("V", "H.I.V.").
+        damage("R", "V").
+        harmful_intention("R").
+    }).</span></pre>
             </div>
             </section>
     </main>
