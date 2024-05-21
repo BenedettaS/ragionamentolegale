@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentenze art. 595 - 609 bis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('img.png') no-repeat center center fixed; 
+            background-size: cover; 
+        }
+
+        nav {
+            width: 100%;
+            background: #0e1030;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 2rem;
+            padding: 0.5vw 2.0vw;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            background-color: #12164ea9;
+            color: white;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            margin-top: 4rem;
+        }
+
+        section {
+            padding: 2rem;
+            width: 100vw;
+            max-width: 1100px;
+            background-color: rgba(68, 68, 68, 0.3);
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            margin-top: 1rem;
+        }
+
+        .eb-garamond-h1 {
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 5vw;
+            color: #323232;
+            line-height: 1.1;
+            margin-top: 2rem;
+        }
+
+        .code-section {
+            margin-top: 0rem;
+            padding: 1rem;
+        }
+
+        .code-section h2 {
+            font-size: 1.5rem;
+            color: #0e1030;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .code-section pre {
+            background-color: rgba(244, 244, 244, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 1rem;
+            font-family: "Courier New", Courier, monospace;
+            max-width: 100%;
+            white-space: pre-wrap;
+            text-align: left;
+            margin-bottom: 0rem;
+        }
+
+        .center-text {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .highlight {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: block;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            font-family: "Source Code Pro", "Courier New", Courier, monospace;
+        }
+        
+
+        @media screen and (max-width: 768px) {
+            body {
+                background-size: cover; 
+            }
+
+            .eb-garamond-h1 {
+                font-size: 10vw;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            body {
+                background-size: cover;
+            }
+
+            .eb-garamond-h1 {
+                font-size: 12vw;
+                text-align: center;
+            }
+
+            nav{
+                position: fixed;
+            }
+
+            nav a {
+                margin: 0 1rem;
+                font-size: 1rem;
+            }
+
+            .code-section h2 {
+                font-size: 1.1rem;
+            }
+
+            .code-section pre {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="articoli.html">Articoli</a>
+        <a href="sentenze.html">Sentenze</a>
+    </nav>
+
+    <main>
+        <div class="eb-garamond-h1">
+            Sentenze artt. 595 - 609 bis
+        </div>
+
+        <section>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Frosinone, 11/10/2023, n. 1823</b></span>
+Non può ritenersi provata la responsabilità di omicidio colposo a carico del datore di lavoro per negligenza e mancato rispetto delle disposizioni di sicurezza dei lavoratori, se non vi sia certezza circa la dinamica dell'incidente e tutte le risultanze dei testi e dei medici addebitino le lesioni ad una caduta da bicicletta. 
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">uncertain_dynamics("R", "V").
+illness("lesione").
+derive("V", "lesione").
+derive_illness("V").
+caused_by("V", "V", "caduta bicicletta", "lesione").
+    
+:- uncertain_dynamics(R, V), caused_by(V, V, H, I), illness(I), negligent_manslaughter(R, V), R!=V.</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#neg({
+        negligent_manslaughter("R", "V")
+    },{
+
+    },{
+        uncertain_dynamics("R", "V").
+        illness("lesione").
+        derive("V", "lesione").
+        derive_illness("V").
+        caused_by("V", "V", "caduta bicicletta", "lesione").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale, sez. IV, 19/12/2023, n. 7192</b></span>
+In tema di infortuni sul lavoro, è configurabile l'aggravante della violazione di norme antinfortunistiche anche nel caso in cui l'attività sia prestata dal lavoratore a titolo di amicizia, riconoscenza o comunque in una situazione diversa dal rapporto di subordinazione, posto che la normativa a tutela della sicurezza sul lavoro deve essere rispettata ogni qualvolta la prestazione avvenga in ambiente suscettibile di essere definito di lavoro. (Fattispecie relativa ad omicidio colposo, in cui la Corte ha ritenuto corretto il riconoscimento dell'aggravante di cui all' art. 589, comma 2, c.p. in relazione alla morte di un collaboratore occasionale dell'imputato, vittima di un'errata manovra nell'impiego di un escavatore, che aveva preso parte, a titolo di amicizia, all'esecuzione di lavori di manutenzione domestica).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">cause_death("R", "V").
+:- respect_rules("norme antinfortunistiche").
+rules("norme antinfortunistiche").
+negligence("R").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        negligent_manslaughter("R", "V")
+    },{
+        respect_rules("norme antinfortunistiche")     
+    },{
+        cause_death("R", "V").
+        rules("norme antinfortunistiche").
+        negligence("R").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Corte appello, Bari, sez. II, 22/02/2024, n. 315</b></span>
+Nell'ipotesi di un incidente mortale, quando dalla dinamica non risulti ascrivibile a colpa né dell'autista dell'autobus né dei pedoni, in quanto la presenza dei cassonetti dell'immondizia non ha avuto un'incidenza apprezzabile sulla dinamica del sinistro, l'incidente stesso deve essere considerato come un evento fortuito, non ascrivibile a colpa di nessuno.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">uncertain_dynamics("R", "V").
+cause_death("R", "V").
+    
+:- uncertain_dynamics(R, V), cause_death(R, V), negligent_manslaughter(R, V).</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#neg({
+        negligent_manslaughter("R", "V")
+    },{
+
+    },{
+        uncertain_dynamics("R", "V").
+        cause_death("R", "V").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Genova sez. I, 30/05/2022, n.2072</b></span>
+Il mancato rispetto delle norme di prudenza del codice della strada con conseguente sinistro stradale e morte di uno dei soggetti comporta la responsabilità ex art. 589 bis c.p.
+Deve ritenersi sussistente la responsabilità per il reato di cui all'art. 589 bis c.p. a seguito del mancato rispetto delle disposizioni del codice della strada la condotta del conducente che, pur in presenza di segnali di pericolo prima di un sinistro, non abbia ridotto la propria velocità di andatura e pertanto non prestando particolare attenzione nel tratto di strada non riusciva a reagire prontamente all'ostacolo pur in precedenza segnalato, determinando così un sinistro a catena con investimento di un operaio deceduto dopo qualche settimana.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">negligence("R").
+cause_death("R", "V").
+:- respect_rules("R", "circolazione stradale").
+rules("circolazione stradale").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        vehicular_homicide("R", "V")
+    },{
+        respect_rules("R", "circolazione stradale")
+    },{
+        negligence("R").
+        cause_death("R", "V").
+        rules("circolazione stradale").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Frosinone, 21/08/2023, n.1110</b></span>
+La mancata attuazione delle condotte di cautela nella guida comporta la responsabilità per il reato di omicidio stradale
+In un tratto di strada non lontano dal centro cittadino, sprovvista di attraversamento pedonale, in una zona nella quale erano presenti esercizi commerciali, l'imputato avrebbe dovuto prefigurarsi l'attraversamento da parte dei pedoni, in aggiunta alle condizioni di scarsa visibilità, dovute al buio serale, all'assenza di illuminazione pubblica ed alla carente illuminazione artificiale degli esercizi commerciali presenti, sono condizioni che dovrebbero comportare una maggiore cautela alla guida per evitare ogni possibile sinistro. Conseguentemente la mancata attuazione di condotte di massima cautela nella guida determina la responsabilità per il sinistro nel quale ha perso la vita la persona offesa.
+
+<span class="center-text"><b>Codice ASP</b><span class="highlight">:- caution("R").
+cause_death("R", "V").
+:- respect_rules("R", "circolazione stradale").
+rules("circolazione stradale").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        vehicular_homicide("R", "V"),
+        negligence("R")
+    },{
+        caution("R")
+    },{
+        cause_death("R", "V").
+        rules("circolazione stradale").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. IV, 22/11/2023, n.1929</b></span>
+Esente da responsabilità l’automobilista che procedendo a velocità leggermente superiore ai limiti collide con auto che non rispetta il diritto di precedenza
+In tema di circolazione stradale, il principio di affidamento postula che la condotta dell'agente costituisca concausa dell'evento e che non sia prevedibile il comportamento incauto altrui in relazione alle condizioni concrete del fatto, alla singola posizione di garanzia ed all'azione intrapresa. (In applicazione del principio, la Corte ha ritenuto esente da responsabilità, per carenza di concausalità colposa nel delitto di omicidio stradale, un automobilista che, nel percorrere una via con diritto di precedenza a una velocità superiore di soli 16 Km/h ai limiti consentiti, collideva, in prossimità di un incrocio, con un autocarro che non aveva rispettato il diritto di precedenza, il cui conducente, a seguito dell'impatto, decedeva, sul rilievo della irrilevanza, ai fini della causazione dell'esito letale, dell'inosservanza del limite di velocità).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">higher_speed("R").
+:- decelerate("R").
+cause_death("R", "V").
+:- observe_precedence("V").
+negligence("V").
+:- respect_rules("V", "circolazione stradale").
+:- respect_rules("R", "circolazione stradale").
+rules("circolazione stradale").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#neg({
+        vehicular_homicide("R", "V")
+    },{
+        decelerate("R"),
+        observe_precedence("V"),
+        respect_rules("V", "circolazione stradale"),
+        respect_rules("R", "circolazione stradale")
+    },{
+        higher_speed("R").
+        cause_death("R", "V").
+        negligence("V").
+        rules("circolazione stradale").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. IV, 16/01/2024, n.9903</b></span>
+Responsabilità dell'omicidio stradale in caso di mancata osservanza della precedenza in un incrocio e di velocità superiore a quella consentita
+In tema di omicidio stradale, il nesso causale non è di per sè interrotto dalla condotta di guida tenuta dalla persona offesa che viaggia a una velocità superiore a quella consentita (nella specie è stata riconosciuta la responsabilità dell'imputato che non aveva osservato la precedenza, mentre era alla guida di un furgone nell'effettuare la svolta a sinistra in un incrocio, investendo un motociclo proveniente dall'opposto senso di marcia, atteso che in considerazione della velocità del motociclo e della visibilità del conducente, il furgone aveva cominciato la manovra di svolta a sinistra quando il motociclo era già nel suo campo visivo).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">higher_speed("R").
+:- observe_precedence("R").
+negligence("R").
+cause_death("R", "V").
+rules("circolazione stradale").
+:- higher_speed(R), respect_rules(R, "circolazione stradale").
+
+</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        vehicular_homicide("R", "V")
+    },{
+        observe_precedence("R"), 
+        respect_rules("R", "circolazione stradale")
+    },{
+        higher_speed("R").
+        negligence("R").
+        cause_death("R", "V").
+        rules("circolazione stradale").
+    }).
+
+#neg({
+        respect_rules("R", "circolazione stradale")
+    },{
+
+    },{
+        higher_speed("R"). 
+        rules("R", "circolazione stradale").
+    }).
+</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. IV, 08/02/2024, n.12328</b></span>
+In tema di omicidio colposo stradale, il disposto di cui all'art. 589-bis, comma ottavo, cod. pen., relativo al caso di morte di più persone ovvero a quello di morte di una o più persone e di lesioni in danno di una o più persone, non configura né un'autonoma ipotesi di reato complesso, né una specifica aggravante, ma disciplina un caso di concorso formale di reati, unificati solo "quoad poenam", sicché ciascuno di essi conserva la propria autonomia.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">cause_death("R", "V").
+negligence("R").
+:- respect_rules("R", "circolazione stradale").
+rules("circolazione stradale").
+    
+agent("V1").
+illness("illness").
+derive("V1", "illness").
+derive_illness("V1").
+damage("R", "V1"). </span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        vehicular_homicide("R", "V"),
+        personal_injuries("R", "V1", "illness"),
+        harmful_intention("R")
+    },{
+        respect_rules("R", "circolazione stradale")
+    },{
+        cause_death("R", "V").
+        rules("circolazione stradale").
+        negligence("R").
+        agent("V1").
+        illness("illness").
+        derive("V1", "illness").
+        derive_illness("V1").
+        damage("R", "V1").        
+    }).
+</span></pre>
+            </div>
+            </section>
+    </main>
+</body>
+</html>
