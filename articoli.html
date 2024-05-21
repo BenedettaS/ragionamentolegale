@@ -205,8 +205,7 @@ Tale disposizione non si applica quando la legge considera la violenza come elem
 <span class="highlight">reo(R, "beatings") :- beatings(R, V).
 victim(V, "beatings") :- beatings(R, V).
 
-beatings(R, V) :- damage(R, V), harmful_intention(R), not derive_illness(V), agent(R), agent(V), R!=V.</span>
-                </pre>
+beatings(R, V) :- damage(R, V), harmful_intention(R), not derive_illness(V), agent(R), agent(V), R!=V.</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 582</h2>
@@ -247,10 +246,12 @@ functionality(F) :- procreate(F).
 functionality(F) :- speach(F).
 
 serious_personal_injuries(R, V, I, "lesioni gravi") :- personal_injuries(R, V, I), severity(2).
-serious_personal_injuries(R, V, I, "lesioni gravi") :- personal_injuries(R, V, I), weakening(V, F), functionality(F). 
+serious_personal_injuries(R, V, I, "lesioni gravi") :- personal_injuries(R, V, I), weakening(V, F),
+    functionality(F). 
 
 serious_personal_injuries(R, V, I, "lesioni gravissime") :- personal_injuries(R, V, I), severity(3).
-serious_personal_injuries(R, V, I, "lesioni gravissime") :- personal_injuries(R, V, I), loss(V, F), functionality(F).</span></pre>
+serious_personal_injuries(R, V, I, "lesioni gravissime") :- personal_injuries(R, V, I), loss(V, F), 
+    functionality(F).</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 584</h2>
@@ -272,10 +273,13 @@ reo(G1, "affray") :- affray(G, G1), agent(R1), part_of(R1, G1).
 reo(R, "affray") :- affray(G, G1), agent(R), part_of(R, G).
 reo(R1, "affray") :- affray(G, G1), agent(R1), part_of(R1, G1).     
 
-affray(G, G1) :- harmful_intention(G), harmful_intention(G1), agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R, G!=G1.
+affray(G, G1) :- harmful_intention(G), harmful_intention(G1), agent(R), agent(R1), agent(R2), 
+    part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R, G!=G1.
 
-group(G) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R.
-group(G1) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R.</span> </pre>
+group(G) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R != R1, 
+    R1 != R2, R2 != R.
+group(G1) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R != R1, 
+    R1 != R2, R2 != R.</span> </pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 589</h2>
@@ -285,7 +289,8 @@ Chiunque cagiona per colpa la morte di una persona è punito con la reclusione d
 <span class="highlight">reo(R, "negligent_manslaughter") :- negligent_manslaughter(R, V).
 victim(V, "negligent_manslaughter") :- negligent_manslaughter(R, V).
 
-negligent_manslaughter(R, V) :- negligence(R), not negligence(V), cause_death(R, V), agent(R), agent(V), R != V. </span></pre>
+negligent_manslaughter(R, V) :- negligence(R), not negligence(V), cause_death(R, V), agent(R), 
+    agent(V), R != V. </span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 589 bis</h2>
@@ -296,7 +301,9 @@ Chiunque cagioni per colpa la morte di una persona con violazione delle norme su
 victim(V, "vehicular_homicide") :- vehicular_homicide(R, V).
 
 vehicular_homicide(R, V) :- negligence(R), not negligence(V), cause_death(R, V), not respect_rules(R, "circolazione stradale"), rules("circolazione stradale"), agent(R), agent(V), R != V.
+    
 vehicular_homicide(R, V) :- negligence(R), not negligence(V), cause_death(R, V), not respect_rules(R, "navigazione marittima"), rules("navigazione marittima"), agent(R), agent(V), R != V.
+    
 vehicular_homicide(R, V) :- negligence(R), not negligence(V), cause_death(R, V), not respect_rules(R, "navigazione interna"), rules("navigazione interna"), agent(R), agent(V), R != V. </span> </pre>
             </div>
             <div class="code-section">
@@ -307,7 +314,8 @@ Chiunque cagiona ad altri per colpa una lesione personale [582] è punito con la
 <span class="highlight">reo(R, "negligent_personal_injuries") :- negligent_personal_injuries(R, V, I).
 victim(V, "negligent_personal_injuries") :- negligent_personal_injuries(R, V, I).
 
-negligent_personal_injuries(R, V, I) :- negligence(R), derive_illness(V), derive(V, I), illness(I), damage(R, V), agent(R), agent(V), R!=V.</span> </pre>
+negligent_personal_injuries(R, V, I) :- negligence(R), derive_illness(V), derive(V, I), illness(I), 
+    damage(R, V), agent(R), agent(V), R!=V.</span> </pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 595</h2>
