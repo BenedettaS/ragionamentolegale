@@ -178,6 +178,7 @@
                 <h2>Articolo 575</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 575 - Omicidio</b></span>
+Chiunque cagiona la morte di un uomo è punito con la reclusione non inferiore ad anni ventuno.
 <span class="highlight">reo(R, "murder") :- murder(R, V).
 victim(V, "murder") :- murder(R, V).
     
@@ -188,7 +189,7 @@ murder(R, V) :- death_intention(R), not consent(V), cause_death(R, V), agent(R),
                 <h2>Articolo 579</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 579 - Omicidio del consenziente</b></span>
-
+Chiunque cagiona la morte di un uomo, col consenso di lui, è punito con la reclusione da sei a quindici anni.
 <span class="highlight">reo(R, "consenting_murder") :- consenting_murder(R, V).
 victim(V, "consenting_murder") :- consenting_murder(R, V).
 
@@ -253,19 +254,16 @@ functionality(F) :- procreate(F).
 functionality(F) :- speach(F).
 
 serious_personal_injuries(R, V, I, "lesioni gravi") :- personal_injuries(R, V, I), severity(2).
-serious_personal_injuries(R, V, I, "lesioni gravi") :- personal_injuries(R, V, I), weakening(V, F), 
-                                                       functionality(F). 
+serious_personal_injuries(R, V, I, "lesioni gravi") :- personal_injuries(R, V, I), weakening(V, F), functionality(F). 
 
 serious_personal_injuries(R, V, I, "lesioni gravissime") :- personal_injuries(R, V, I), severity(3).
-serious_personal_injuries(R, V, I, "lesioni gravissime") :- personal_injuries(R, V, I), loss(V, F), 
-                                                            functionality(F).</span>
-                </pre>
+serious_personal_injuries(R, V, I, "lesioni gravissime") :- personal_injuries(R, V, I), loss(V, F), functionality(F).</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 584</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 584 - Omicidio preterintenzionale</b></span>
-
+Chiunque, con atti diretti a commettere uno dei delitti preveduti dagli articoli 581 e 582, cagiona la morte di un uomo, è punito con la reclusione da dieci a diciotto anni.
 <span class="highlight">reo(R, "manslaughter") :- manslaughter(R, V).
 victim(V, "manslaughter") :- manslaughter(R, V).
 
@@ -277,7 +275,7 @@ manslaughter(R, V) :- harmful_intention(R), cause_death(R, V), agent(R), agent(V
                 <h2>Articolo 588</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 588 - Rissa</b></span>
-
+Chiunque partecipa a una rissa è punito con la multa fino a € 2.000.
 <span class="highlight">reo(G, "affray") :- affray(G, G1), agent(R), part_of(R, G).
 reo(G1, "affray") :- affray(G, G1), agent(R1), part_of(R1, G1).
 reo(R, "affray") :- affray(G, G1), agent(R), part_of(R, G).
@@ -294,7 +292,7 @@ group(G1) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_o
                 <h2>Articolo 589</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 589 - Omicidio colposo</b></span>
-
+Chiunque cagiona per colpa la morte di una persona è punito con la reclusione da sei mesi a cinque anni.
 <span class="highlight">reo(R, "negligent_manslaughter") :- negligent_manslaughter(R, V).
 victim(V, "negligent_manslaughter") :- negligent_manslaughter(R, V).
 
@@ -306,7 +304,7 @@ negligent_manslaughter(R, V) :- negligence(R), not negligence(V), cause_death(R,
                 <h2>Articolo 589 bis</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 589 bis - Omicidio stradale</b></span>
-
+Chiunque cagioni per colpa la morte di una persona con violazione delle norme sulla disciplina della circolazione stradale o della navigazione marittima o interna è punito con la reclusione da due a sette anni.
 <span class="highlight">reo(R, "vehicular_homicide") :- vehicular_homicide(R, V).
 victim(V, "vehicular_homicide") :- vehicular_homicide(R, V).
 
@@ -320,7 +318,7 @@ vehicular_homicide(R, V) :- negligence(R), not negligence(V), cause_death(R, V),
                 <h2>Articolo 590</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 590 - Lesioni personali colpose</b></span>
-
+Chiunque cagiona ad altri per colpa una lesione personale [582] è punito con la reclusione fino a tre mesi o con la multa fino a 309 euro.
 <span class="highlight">reo(R, "negligent_personal_injuries") :- negligent_personal_injuries(R, V, I).
 victim(V, "negligent_personal_injuries") :- negligent_personal_injuries(R, V, I).
 
@@ -332,7 +330,7 @@ negligent_personal_injuries(R, V, I) :- negligence(R), derive_illness(V), derive
                 <h2>Articolo 595</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 595 - Diffamazione</b></span>
-
+Chiunque, fuori dei casi indicati nell'articolo precedente, comunicando con più persone, offende l'altrui reputazione, è punito con la reclusione fino a un anno o con la multa fino a € 1.032.
 <span class="highlight">reo(R, "defamation") :- defamation(R, V).
 victim(V, "defamation") :- defamation(R, V).
 
@@ -344,7 +342,10 @@ defamation(R, V) :- comunicate(R, T), offend(R, V), agent(R), agent(V), agent(T)
                 <h2>Articolo 609 bis</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 609 bis - Violenza sessuale</b></span>
-
+Chiunque, con violenza o minaccia o mediante abuso di autorità, costringe taluno a compiere o subire atti sessuali è punito con la reclusione da sei a dodici anni.
+Alla stessa pena soggiace chi induce taluno a compiere o subire atti sessuali:
+1) abusando delle condizioni di inferiorità fisica o psichica della persona offesa al momento del fatto [609 quater , 609 sexies , 609 decies];
+2) traendo in inganno la persona offesa per essersi il colpevole sostituito ad altra persona.
 <span class="highlight">reo(R, "sexual_assault") :- sexual_assault(R, V).
 victim(V, "sexual_assault") :- sexual_assault(R, V).     
 
@@ -358,7 +359,7 @@ sexual_assault(R, V) :- abuse_authority(R, V), force(R, V, A), sexual_action(A),
                 <h2>Articolo 610</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 610 - Violenza privata</b></span>
-
+Chiunque, con violenza o minaccia, costringe altri a fare, tollerare od omettere qualche cosa è punito con la reclusione fino a quattro anni.
 <span class="highlight">reo(R, "private_violence") :- private_violence(R, V).
 victim(V, "private_violence") :- private_violence(R, V).
          
