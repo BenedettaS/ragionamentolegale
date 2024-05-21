@@ -203,20 +203,16 @@ agent("V").
   
 1{using_judgment("#1")}1 :- illness("contusione escoriata").
 1{using_judgment("#1")}1 :- illness("cervicalgia").
-2{damage(R, V); using_judgment("#2")}2 :- illness("lesione cutanea"), caused_by(R, V, H, I), 
-                                          substance(H). 
+2{damage(R, V); using_judgment("#2")}2 :- illness("lesione cutanea"), caused_by(R, V, H, I), substance(H). 
 1{using_judgment("#3")}1 :- illness("escoriazione").
 2{damage(R, V); using_judgment("#4")}2 :- push(R, V).
-2{damage(R, V); using_judgment("#5")}2 :- illness("irritazione cutanea"), illness("nausea"), 
-                                          illness("conati vomito"), caused_by(R, V, H, I), substance(H).
+2{damage(R, V); using_judgment("#5")}2 :- illness("irritazione cutanea"), illness("nausea"), illness("conati vomito"), caused_by(R, V, H, I), substance(H).
 2{damage(R, V); using_judgment("#6")}2 :- hands_around_throat(R, V).
 1{using_judgment("#7")}1 :- physical_illness("graffio").
-2{damage(R, V); using_judgment("#8")}2 :- tug(R, V, P), part_of_body(V, P), push(R, V), 
-                                          minor_bruises(R, V), not derive_illness(V).
+2{damage(R, V); using_judgment("#8")}2 :- tug(R, V, P), part_of_body(V, P), push(R, V), minor_bruises(R, V), not derive_illness(V).
 2{damage(R, V); using_judgment("#9")}2 :- slap(R, V), not derive_illness(V).
 1{using_judgment("#10")}1 :- physical_illness("acufene").
-2{damage(R, V); using_judgment("#11")}2 :- illness("contusione"), serious_bruises(R, V), 
-                                           derive_illness(V), derive(V, "contusione"). 
+2{damage(R, V); using_judgment("#11")}2 :- illness("contusione"), serious_bruises(R, V), derive_illness(V), derive(V, "contusione"). 
 2{damage(R, V); using_judgment("#12")}2 :- slap(R, V), derive_illness(V).
 1{using_judgment("#13")}1 :- illness("ematoma").
 2{damage(R, V); using_judgment("#14")}2 :- use_object(R, V, O), blunt(O).
@@ -239,13 +235,37 @@ damage(R, V) :- hit(R, V), use_object(R, V, O).</span></pre>
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. II, 12/03/2008, n.15420</b></span>
 Ricorre il delitto di lesioni, e non già quello meno grave di percosse, sia in caso di contusione escoriata che di cervicalgia, rientrando entrambe nella nozione di "malattia", in quanto l'una consiste nella lesione sia pure superficiale del tessuto cutaneo e quindi nella patologica alterazione dell'organismo, e l'altra comporta una pur limitata alterazione funzionale del rachide cervicale non esaurendosi in una semplice sensazione di dolore.
+<span class="center-text"><b>Codice ASP</b></span>
 <span class="highlight">physical_illness("contusione escoriata").
 physical_illness("cervicalgia").
 derive_illness("V").
 derive("V", "cervicalgia").
 derive("V", "contusione escoriata").
 harmful_intention("R").
-damage("R", "V").</span></pre>
+damage("R", "V").</span>
+<span class="center-text"><b>Codice ILASP</b></span>
+<span class="highlight">#pos({
+        personal_injuries("r","v","contusione escoriata")
+    },{
+
+    },{
+        physical_illness("contusione escoriata"). 
+        derive_illness("v"). 
+        derive("v","contusione escoriata"). 
+        harmful_intention("r"). 
+        damage("r","v").
+    }).
+#pos({
+        personal_injuries("r","v","cervicalgia")
+    },{
+
+    },{
+        physical_illness("cervicalgia"). 
+        derive_illness("v"). 
+        derive("v","cervicalgia"). 
+        harmful_intention("r"). 
+        damage("r","v").
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -473,8 +493,7 @@ Non può esserci condanna per lesioni personali nel caso in cui in sede dibattim
 <span class="highlight">uncertain_dynamics("R", "V").
 damage("V", "R").
 damage("R", "V").
-:- uncertain_dynamics(R, V), damage(V, R), personal_injuries(R, V, I).
-    </span></pre>
+:- uncertain_dynamics(R, V), damage(V, R), personal_injuries(R, V, I).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
