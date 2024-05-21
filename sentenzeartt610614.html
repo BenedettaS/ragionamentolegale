@@ -180,6 +180,7 @@
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 17/11/2022, n.9957</b></span>
 Ai fini della configurabilità del reato di violenza privata, il requisito della violenza si identifica in qualsiasi mezzo idoneo a privare coattivamente l'offeso della libertà di determinazione e di azione (nella specie, l'imputato aveva parcheggiato la propria vettura bloccando la vettura di proprietà di una donna incinta che proprio per questo aveva dovuto rinunciare alla prestabilita visita medica).
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">force("R", "V", "rinunciare a visita").
 block_way("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
@@ -197,6 +198,7 @@ block_way("R", "V").</span>
 <span class="center-text"><b>Cassazione penale sez. V, 14/12/2022, n.3991</b></span>
 Commette il reato di violenza privata l'imputato che si barrica in casa impedendo al convivente di accedervi
 In tema di violenza privata, l'elemento della violenza si identifica in qualsiasi mezzo idoneo a privare coattivamente la persona offesa della libertà di azione e di determinazione. (Fattispecie relativa a imputato che si era barricato in casa, impedendo al convivente di accedervi) .
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">occupy("R", "V", "casa").
 force("R", "V", "non accedere").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
@@ -213,6 +215,7 @@ force("R", "V", "non accedere").</span>
                 <pre>
 <span class="center-text"><b>Tribunale Nola, 10/01/2023, n.24</b></span>
 È integrato il reato di violenza privata da parte del soggetto agente che, al fine costringere la persona offesa alla dazione di una somma di denaro, la minacci di aggressioni fisiche, la spintoni e la costringa a rimanere nel luogo dell'azione criminosa.
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">threat("R", "V").
 push("R", "V").
 force("R", "V", "rimanere").</span>
@@ -231,6 +234,7 @@ force("R", "V", "rimanere").</span>
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 27/01/2023, n.20365</b></span>
 Nel reato di violenza privata occorre che la minaccia sia diretta a costringere taluno a fare, tollerare od omettere qualcosa
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">threat("R", "V").
 force("R", "V", "fare"), force("R", "V", "omettere"), force("R", "V", "tollerare").
 action("fare").
@@ -270,6 +274,7 @@ action("tollerare").</span>
                 <pre>
 <span class="center-text"><b>Tribunale Gorizia, 24/05/2023, n.534</b></span>
 La minaccia usata dalla madre era senza dubbio idonea a condizionare il libero agire del figlio nella redazione di un tema diffamatorio ai danni del pare, al fine di ottenere il collocamento del figlio presso di se, minacciando ripercussioni negative e gravi ai danni del padre in caso di mancato adempimento da parte del figlio, integra il reato di violenza privata.
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">threat("R", "V"). % R e V sono madre e figlio in questo caso
 force("R", "V", "obbedire").
 action("obbedire").</span>
@@ -288,6 +293,7 @@ action("obbedire").</span>
 <span class="center-text"><b>Tribunale Frosinone, 20/10/2023, n.1588</b></span>
 Introdursi in casa della p.o. distruggere i beni e costringere la stessa a trovare riparo in una stanza integra sia violazione di domicilio sia violenza privata
 Integra il reato di violazione di domicilio e violenza privata il prevenuto che, brandendo una mazza, forzi l'ingresso di casa della p.o. la aggredisca e minacci, distrugga beni presenti nell'immobile e costringe la p.o. a barricarsi in una delle stanze della casa per trovare riparo, dandosi alla fuga solo con l'intervento delle forze dell'ordine chiamate dalla p.o..
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">dwelling("V", "ingresso").
 force("R", "ingresso").
 assault("R", "V").
@@ -317,6 +323,7 @@ action("barricarsi").
                 <pre>
 <span class="center-text"><b>Tribunale Udine, 13/11/2023, n.2132</b></span>
 Integra il reato di violenza privata l'imputato che, alla guida di un'autovettura, sorpassi ad alta velocità il veicolo condotto dalla persona offesa, gli si ponga davanti ostruendone la marcia e costringendola a non proseguire oltre.
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">surpass("R", "V").
 block_way("R", "V").
 force("R", "V", "non proseguire").
@@ -336,6 +343,7 @@ action("non proseguire").</span>
                 <pre>
 <span class="center-text"><b>Tribunale Pescara, 31/10/2018, n.2659</b></span>
 Il reato di violazione di domicilio concorre con il reato di  violenza privata nel caso in cui si entri nell’abitazione di un soggetto al fine di riuscire a farlo uscire dall’abitazione con violenza o minaccia.
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">break_into_dwelling("R", "V", "abitazione").
 dwelling("V", "abitazione").
 :- consent("V").
@@ -374,6 +382,7 @@ action("uscire").</span>
 <span class="center-text"><b>Tribunale La Spezia sez. uff. indagini prel., 22/10/2020</b></span>
 Non commette violazione di domicilio chi entri in una coorte condominiale di proprietà di un ente per dare cibo ai gatti
 Non integra il reato di violazione di domicilio la condotta di soggetto che entri in una coorte condominiale  di proprietà di un ente in cui i locatari avevano denunciato la condotta di violazione di domicilio per aver  lo stesso dato del cibo ai gatti  sporcando la corte stessa.
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">feed("R", "gatti").
 dwelling("V", "coorte").
 :- consent("V").
@@ -392,6 +401,7 @@ dwelling("V", "coorte").
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 13/07/2022, n.34784</b></span>
 Le pertinenze di una privata dimora - quali, nel caso in esame, le scale e l'androne di un palazzo - rientrano senza alcun dubbio nel concetto di privata dimora - a sua volta più ampio di quello di casa di abitazione - in quanto luoghi suscettibili di essere utilizzati, non occasionalmente, ma in maniera apprezzabile ancorché contingente, per lo svolgimento di una attività personale, rientrante nella larga accezione di libertà domestica e di manifestazione della vita privata; ciò grazie alla durata apprezzabile del rapporto tra il luogo e la persona, basato sulla connotazione pertinenziale di tali ambienti rispetto all'abitazione principale, che li rende non accessibili ai terzi, senza il consenso
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">dwelling("V", "androne palazzo").
 dwelling("V", "scale palazzo").
 :- consent("V").
@@ -412,6 +422,7 @@ break_into_dwelling("R", "V", "scale palazzo").</span>
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 05/05/2023, n.31700</b></span>
 Integra violazione di domicilio chi s'introduce, contro la volontà di chi ha diritto di escluderlo, nel cortile dell'edificio condominiale, rientrando il cortile nel concetto di appartenenza dell'abitazione (la Corte ha ritenuto sussistente l'ipotesi di violazione di domicilio nella condotta dell'imputato che aveva occupato in maniera prolungata e illegittima lo spazio di parcheggio del condominio parcheggiandovi non solo la propria vettura ma anche le proprie moto).
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">park("R", "parcheggio condominiale", "moto").
 park("R", "parcheggio condominiale", "auto").
 dwelling("V", "parcheggio condominiale").
@@ -431,6 +442,7 @@ dwelling("V", "parcheggio condominiale").
 <span class="center-text"><b>Tribunale Trieste, 27/11/2023, n.1928</b></span>
 C'è concorso tra i soggetti che si siano illegittimamente e congiuntamente nell'immobile altrui
 Sussiste il concorso degli imputati nel reato di violazione di domicilio e di furto in capo ai soggetti che si siano introdotti illegittimamente nell'abitazione della p.o., contro la sua volontà al fine di sottrarre la sostanza stupefacente da questi detenuta.
+
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">break_into_dwelling("R", "V", "abitazione").
 dwelling("V", "abitazione").
 :- consent("V").
