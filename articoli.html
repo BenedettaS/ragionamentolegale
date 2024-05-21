@@ -182,8 +182,7 @@ Chiunque cagiona la morte di un uomo è punito con la reclusione non inferiore a
 <span class="highlight">reo(R, "murder") :- murder(R, V).
 victim(V, "murder") :- murder(R, V).
     
-murder(R, V) :- death_intention(R), not consent(V), cause_death(R, V), agent(R), agent(V), R != V.</span>
-                </pre>
+murder(R, V) :- death_intention(R), not consent(V), cause_death(R, V), agent(R), agent(V), R != V.</span></pre>
             </div>       
             <div class="code-section">
                 <h2>Articolo 579</h2>
@@ -193,8 +192,7 @@ Chiunque cagiona la morte di un uomo, col consenso di lui, è punito con la recl
 <span class="highlight">reo(R, "consenting_murder") :- consenting_murder(R, V).
 victim(V, "consenting_murder") :- consenting_murder(R, V).
 
-consenting_murder(R, V) :- death_intention(R), consent(V), cause_death(R, V), agent(R), agent(V), R != V.</span>
-                </pre>
+consenting_murder(R, V) :- death_intention(R), consent(V), cause_death(R, V), agent(R), agent(V), R != V.</span></pre>
             </div>          
             <div class="code-section">
                 <h2>Articolo 581</h2>
@@ -204,7 +202,6 @@ Chiunque percuote taluno, se dal fatto non deriva una malattia nel corpo o nella
 con la reclusione fino a sei mesi o con la multa fino a euro 309.        
 Tale disposizione non si applica quando la legge considera la violenza come elemento costitutivo o come circostanza aggravante di un altro reato [294, 336, 337, 338, 341, 342, 343, 353, 385, 386, 393, 405, 507, 
 584, 610, 611, 614 4, 628, 629, 634, 635].    
-
 <span class="highlight">reo(R, "beatings") :- beatings(R, V).
 victim(V, "beatings") :- beatings(R, V).
 
@@ -217,16 +214,13 @@ beatings(R, V) :- damage(R, V), harmful_intention(R), not derive_illness(V), age
 <span class="center-text"><b>Codice Penale Art. 582 - Lesione personale</b></span>
 Chiunque cagiona ad  alcuno  una  lesione  personale,  dalla  quale deriva una malattia nel  corpo  o  nella mente, è punito  con  la reclusione da sei mesi a tre anni. 
 Si procede tuttavia d'ufficio se ricorre taluna delle circostanze aggravanti previste negli articoli 583, 583 quater, secondo comma, primo periodo, e 585, ad eccezione di quelle indicate nel primo comma, numero 1), e nel secondo comma dell'articolo 577. Si procede altresì d'ufficio se la malattia ha una durata superiore a venti giorni quando il fatto è commesso contro persona incapace, per età o per infermità.
-
 <span class="highlight">reo(R, "personal_injuries") :- personal_injuries(R, V, I).
 victim(V, "personal_injuries") :- personal_injuries(R, V, I).
 
 illness(I) :- physical_illness(I).
 illness(I) :- mental_illness(I).
     
-personal_injuries(R, V, I) :- damage(R, V), harmful_intention(R), derive_illness(V), derive(V, I), 
-                              agent(R), agent(V), illness(I), R!=V.</span>
-            </pre>
+personal_injuries(R, V, I) :- damage(R, V), harmful_intention(R), derive_illness(V), derive(V, I), agent(R), agent(V), illness(I), R!=V.</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 583</h2>
@@ -240,7 +234,6 @@ La lesione personale (582) è gravissima, e si applica la reclusione da sei a do
 1) una malattia certamente o probabilmente insanabile;
 2) la perdita di un senso;
 3) la perdita di un arto, o una mutilazione che renda l'arto inservibile, ovvero la perdita dell'uso di un organo o della capacità di procreare, ovvero una permanente e grave difficoltà della favella
-
 <span class="highlight">reo(R, "serious_personal_injuries") :- serious_personal_injuries(R, V, I, "lesioni gravi").
 victim(V, "serious_personal_injuries") :- serious_personal_injuries(R, V, I, "lesioni gravi").
     
@@ -267,9 +260,7 @@ Chiunque, con atti diretti a commettere uno dei delitti preveduti dagli articoli
 <span class="highlight">reo(R, "manslaughter") :- manslaughter(R, V).
 victim(V, "manslaughter") :- manslaughter(R, V).
 
-manslaughter(R, V) :- harmful_intention(R), cause_death(R, V), agent(R), agent(V), R != V.
-</span>
-                </pre>
+manslaughter(R, V) :- harmful_intention(R), cause_death(R, V), agent(R), agent(V), R != V.</span> </pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 588</h2>
@@ -284,9 +275,7 @@ reo(R1, "affray") :- affray(G, G1), agent(R1), part_of(R1, G1).
 affray(G, G1) :- harmful_intention(G), harmful_intention(G1), agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R, G!=G1.
 
 group(G) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R.
-group(G1) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R.
-</span>
-                </pre>
+group(G1) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R.</span> </pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 589</h2>
@@ -296,9 +285,7 @@ Chiunque cagiona per colpa la morte di una persona è punito con la reclusione d
 <span class="highlight">reo(R, "negligent_manslaughter") :- negligent_manslaughter(R, V).
 victim(V, "negligent_manslaughter") :- negligent_manslaughter(R, V).
 
-negligent_manslaughter(R, V) :- negligence(R), not negligence(V), cause_death(R, V), agent(R), agent(V), R != V. 
-</span>
-                </pre>
+negligent_manslaughter(R, V) :- negligence(R), not negligence(V), cause_death(R, V), agent(R), agent(V), R != V. </span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 589 bis</h2>
@@ -310,9 +297,7 @@ victim(V, "vehicular_homicide") :- vehicular_homicide(R, V).
 
 vehicular_homicide(R, V) :- negligence(R), not negligence(V), cause_death(R, V), not respect_rules(R, "circolazione stradale"), rules("circolazione stradale"), agent(R), agent(V), R != V.
 vehicular_homicide(R, V) :- negligence(R), not negligence(V), cause_death(R, V), not respect_rules(R, "navigazione marittima"), rules("navigazione marittima"), agent(R), agent(V), R != V.
-vehicular_homicide(R, V) :- negligence(R), not negligence(V), cause_death(R, V), not respect_rules(R, "navigazione interna"), rules("navigazione interna"), agent(R), agent(V), R != V. 
-</span>
-                </pre>
+vehicular_homicide(R, V) :- negligence(R), not negligence(V), cause_death(R, V), not respect_rules(R, "navigazione interna"), rules("navigazione interna"), agent(R), agent(V), R != V. </span> </pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 590</h2>
@@ -322,9 +307,7 @@ Chiunque cagiona ad altri per colpa una lesione personale [582] è punito con la
 <span class="highlight">reo(R, "negligent_personal_injuries") :- negligent_personal_injuries(R, V, I).
 victim(V, "negligent_personal_injuries") :- negligent_personal_injuries(R, V, I).
 
-negligent_personal_injuries(R, V, I) :- negligence(R), derive_illness(V), derive(V, I), illness(I), damage(R, V), agent(R), agent(V), R!=V.
-</span>
-                </pre>
+negligent_personal_injuries(R, V, I) :- negligence(R), derive_illness(V), derive(V, I), illness(I), damage(R, V), agent(R), agent(V), R!=V.</span> </pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 595</h2>
@@ -334,9 +317,7 @@ Chiunque, fuori dei casi indicati nell'articolo precedente, comunicando con più
 <span class="highlight">reo(R, "defamation") :- defamation(R, V).
 victim(V, "defamation") :- defamation(R, V).
 
-defamation(R, V) :- comunicate(R, T), offend(R, V), agent(R), agent(V), agent(T), R != V, R != T, T != V.
-</span>
-                </pre>
+defamation(R, V) :- comunicate(R, T), offend(R, V), agent(R), agent(V), agent(T), R != V, R != T, T != V.</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 609 bis</h2>
@@ -351,9 +332,7 @@ victim(V, "sexual_assault") :- sexual_assault(R, V).
 
 sexual_assault(R, V) :- violence(R, V), force(R, V, A), sexual_action(A), not consent(V).
 sexual_assault(R, V) :- threat(R, V), force(R, V, A), sexual_action(A), not consent(V).
-sexual_assault(R, V) :- abuse_authority(R, V), force(R, V, A), sexual_action(A), not consent(V).    
-</span>
-                </pre>
+sexual_assault(R, V) :- abuse_authority(R, V), force(R, V, A), sexual_action(A), not consent(V).</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 610</h2>
@@ -364,21 +343,17 @@ Chiunque, con violenza o minaccia, costringe altri a fare, tollerare od omettere
 victim(V, "private_violence") :- private_violence(R, V).
          
 private_violence(R, V) :- violence(R, V), force(R, V, A), action(A), R!=V.
-private_violence(R, V) :- threat(R, V), force(R, V, A), action(A), R!=V.    
-</span>
-                </pre>
+private_violence(R, V) :- threat(R, V), force(R, V, A), action(A), R!=V.</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 614</h2>
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 614 - Violazione di domicilio</b></span>
-
+Chiunque s'introduce nell'abitazione altrui, o in un altro luogo di privata dimora, o nelle appartenenze di essi, contro la volontà espressa o tacita di chi ha il diritto di escluderlo, ovvero vi s'introduce clandestinamente o con inganno, è punito con la reclusione da uno a quattro anni. Alla stessa pena soggiace chi si trattiene nei detti luoghi contro l'espressa volontà di chi ha diritto di escluderlo, ovvero vi si trattiene clandestinamente o con inganno.
 <span class="highlight">reo(R, "trespassing") :- trespassing(R, V).
 victim(V, "trespassing") :- trespassing(R, V). 
 
-trespassing(R, V) :- break_into_dwelling(R, V, D), dwelling(V, D), not consent(V).
-</span>
-                </pre>
+trespassing(R, V) :- break_into_dwelling(R, V, D), dwelling(V, D), not consent(V).</span></pre>
             </div>
         </section>
     </main>
