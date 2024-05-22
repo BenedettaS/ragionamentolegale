@@ -188,13 +188,13 @@ own("V", "olive").
 take_possession("R", "olive").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#neg({
     	theft("R","V","olive")
-	},{
+    },{
     	theft_intention("R")
-	},{
+    },{
     	subtract("R","olive").
     	own("V","olive").
     	take_possession("R","olive").
-	}).
+    }).
 </span></pre>
             </div>
             <div class="code-section">
@@ -211,16 +211,16 @@ take_possession("R","collana").
 unknown_adherence("V","collana").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	theft_snatch("R","V")
-	},{
-
-	},{
+    },{
+    
+    },{
     	theft_intention("R").
     	physical_object("collana").
     	own("V","collana").
     	subtract("R","collana").
     	take_possession("R","collana").
     	unknown_adherence("V","collana").
-	}).</span></pre>
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -244,12 +244,11 @@ block("R","V","braccio").
 part_of_body("V","braccio").
 res_violence(“R”,”orologio”).
 take_possession("R","orologio").</span>
-<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">
-    #pos({
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	robbery("R","V")
-	},{
+    },{
    	 
-	},{
+    },{
     	theft_intention("R").
     	res("res").
     	own("V","res").
@@ -257,20 +256,20 @@ take_possession("R","orologio").</span>
     	tight_physical_adherence("V","res"). % la person_violence è data da subtract e tight_physical_adherence  
     	resistence("V","R").
     	take_possession("R","res").
-	}).
+    }).
 
     #pos({
         theft_snatch("R","V")
     },{
         
     },{
-         theft_intention("R").
-         physical_object("orologio").
-         own("V","orologio").
-         subtract("R","orologio").
-         block("R","V","braccio").
+        theft_intention("R").
+        physical_object("orologio").
+        own("V","orologio").
+        subtract("R","orologio").
+        block("R","V","braccio").
         part_of_body("V","braccio").
-         res_violence("R","orologio").
+        res_violence("R","orologio").
          take_possession("R","orologio").
     }).</span></pre>
             </div>
@@ -291,9 +290,9 @@ res("oggetto").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	attempted_theft("R","V","oggetto"),
     	theft_intention("R")
-	},{
+    },{
     	take_possession("R","oggetto")
-	},{
+    },{
     	open("R","armadietti").
     	open("R","porte").
     	force("R","armadietti").
@@ -301,7 +300,7 @@ res("oggetto").</span>
     	own("V","oggetto").
     	subtract("R","oggetto").
     	res("oggetto").
-	}).</span></pre>
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -317,15 +316,15 @@ assault("R","V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	robbery("R","V","borsa"),
     	damage("R","V")
-	},{
+    },{
     	theft_snatch("R","V")
-	},{
+    },{
     	theft_intention("R").
     	own("V","borsa").
     	subtract("R","borsa").
     	take_possession("R","borsa").
     	assault("R","V").
-	}).</span></pre>
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -342,16 +341,16 @@ hide("R","merce").
 res("merce").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	theft("R","V","merce")
-	},{
+    },{
     	pay("R","merce")
-	},{
+    },{
     	theft_intention("R").
     	own("V","merce").
     	subtract("R","merce").
     	take_possession("R","merce").
     	hide("R","merce").
     	res("merce").
-	}).</span></pre>
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -368,17 +367,17 @@ res_violence("R","oggetto").
 res("oggetto").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	theft_snatch("R","V")
-	},{
+    },{
     	robbery("R","V"),
     	resistence("V","R")
-	},{
+    },{
     	theft_intention("R").
     	own("V","oggetto").
     	subtract("R","oggetto").
     	take_possession("R","oggetto").
     	res_violence("R","oggetto").       
     	res("oggetto").
-	}).</span></pre>
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -397,18 +396,18 @@ agent("società idrica").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	theft("R","V","acqua"),
         theft_intention("R")
-	},{
+    },{
 
-	},{
+    },{
         own("società idrica","acqua").
         take_possession("R","acqua").
         subtract("R","acqua").
-	    force("R","condutture acqua"),
-	    seal("società idrica","condutture acqua"),
-	    energy("acqua").
-	    economic_value("acqua").
-	    agent("società idrica").
-	}).</span></pre>
+	force("R","condutture acqua"),
+	seal("società idrica","condutture acqua"),
+	energy("acqua").
+	economic_value("acqua").
+        agent("società idrica").
+    }).</span></pre>
             </div>
             </section>
     </main>
