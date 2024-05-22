@@ -353,13 +353,13 @@ use_object("R", "V", "arma da fuoco").
 cause_death("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	murder("R", "V")
-	},{
+    },{
 
-	},{
+    },{
     	robbery("R", "V").
     	use_object("R", "V", "arma da fuoco").
     	cause_death("R", "V").
-	}).</span></pre>
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -384,7 +384,7 @@ cause_death("R", "V").</span>
         medicine("farmaci sedativi").
         medicine("farmaci anestetici").
         cause_death("R", "V").
-    })<./span></pre>
+    }).</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -531,18 +531,18 @@ cause_death("R", "V").
 :- not consent(V), consenting_murder(R, V).</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
     	murder("R", "V")
-	},{
+    },{
     	consenting_murder("R", "V")
-	},{
+    },{
     	death_intention("R").
     	cause_death("R", "V").
-	}).
+    }).
 
 #neg({
     	consenting_murder("R", "V")
-	},{
+    },{
     	consent("V")
-	}).
+    }).
 
 </span></pre>
         </div>
