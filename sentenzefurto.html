@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentenze artt. 624 - 624 bis - 628 </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('img.png') no-repeat center center fixed; 
+            background-size: cover; 
+        }
+
+        nav {
+            width: 100%;
+            background: #0e1030;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 2rem;
+            padding: 0.5vw 2.0vw;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            background-color: #12164ea9;
+            color: white;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            margin-top: 4rem;
+        }
+
+        section {
+            padding: 2rem;
+            width: 100vw;
+            max-width: 1100px;
+            background-color: rgba(68, 68, 68, 0.3);
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            margin-top: 1rem;
+        }
+
+        .eb-garamond-h1 {
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 5vw;
+            color: #323232;
+            line-height: 1.1;
+            margin-top: 2rem;
+        }
+
+        .code-section {
+            margin-top: 0rem;
+            padding: 1rem;
+        }
+
+        .code-section h2 {
+            font-size: 1.5rem;
+            color: #0e1030;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .code-section pre {
+            background-color: rgba(244, 244, 244, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 1rem;
+            font-family: "Courier New", Courier, monospace;
+            max-width: 100%;
+            white-space: pre-wrap;
+            text-align: left;
+            margin-bottom: 0rem;
+        }
+
+        .center-text {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .highlight {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: block;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            font-family: "Source Code Pro", "Courier New", Courier, monospace;
+        }
+        
+
+        @media screen and (max-width: 768px) {
+            body {
+                background-size: cover; 
+            }
+
+            .eb-garamond-h1 {
+                font-size: 10vw;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            body {
+                background-size: cover;
+            }
+
+            .eb-garamond-h1 {
+                font-size: 12vw;
+                text-align: center;
+            }
+
+            nav{
+                position: fixed;
+            }
+
+            nav a {
+                margin: 0 1rem;
+                font-size: 1rem;
+            }
+
+            .code-section h2 {
+                font-size: 1.1rem;
+            }
+
+            .code-section pre {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="articoli.html">Articoli</a>
+        <a href="sentenze.html">Sentenze</a>
+    </nav>
+
+    <main>
+        <div class="eb-garamond-h1">
+            Sentenze artt. 624 - 624 bis - 628
+        </div>
+
+        <section>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Potenza, 02/12/2022, n.1178</b></span>
+Non vi è responsabilità per furto se è la stessa p.o. ad escludere la volontà degli agenti di sottrarre i beni al legittimo proprietario
+Non può esservi condanna per il furto di olive, nei confronti del prevenuto per il quale non sia emersi elementi attestanti la sua condotta di raccolta abusiva e violenta dei frutti dagli alberi di proprietà di terzi e per i quali dallo stesso soggetto danneggiato sia stata esclusa la volontà di sottrarre i beni al legittimo proprietario, ma che l'azione fosse stata espletata nella convinzione del totale abbandono del campo.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">:- theft_intention("R").
+subtract("R", "olive").
+own("V", "olive").
+take_possession("R", "olive").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#neg({
+    	theft("R","V","olive")
+	},{
+    	theft_intention("R")
+	},{
+    	subtract("R","olive").
+    	own("V","olive").
+    	take_possession("R","olive").
+	}).
+</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Nola, 04/01/2023, n.1801</b></span>
+La sottrazione di una collana dal collo del proprietario integra furto con strappo
+Integra il reato di furto con strappo di cui al secondo comma dell'art. 624 bis c.p. la condotta del prevenuto che sottragga una collana dal proprietario che la stia indossando mentre questi è in pubblica via, al fine di trarne profitto.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">theft_intention("R").
+physical_object("collana").
+own("V","collana").
+subtract("R","collana").
+take_possession("R","collana").
+unknown_adherence("V","collana").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+    	theft_snatch("R","V")
+	},{
+
+	},{
+    	theft_intention("R").
+    	physical_object("collana").
+    	own("V","collana").
+    	subtract("R","collana").
+    	take_possession("R","collana").
+    	unknown_adherence("V","collana").
+	}).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. II, 24/01/2023, n.23932</b></span>
+Differenza tra il delitto di rapina e il delitto di furto con strappo nell'ipotesi di violenza esercitata sul braccio della vittima per sottrargli l'orologio
+Ricorre il delitto di rapina quando la condotta violenta sia stata esercitata per vincere la resistenza della persona offesa, anche ove la "res" sia particolarmente aderente al corpo del possessore e la violenza si estenda necessariamente alla persona, dovendo il soggetto attivo superarne la resistenza e non solo la forza di coesione inerente alla normale relazione fisica tra possessore e cosa sottratta, giacché in tal caso è la violenza stessa - e non lo strappo - a costituire il mezzo attraverso il quale si realizza la sottrazione; si configura, invece, il delitto di furto con strappo quando la violenza sia immediatamente rivolta verso la cosa, seppur possa avere ricadute sulla persona che la detiene (fattispecie relativa alla condotta degli imputati che per impossessarsi dell'orologio della ne avevano bloccato il braccio).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">theft_intention("R").
+res("res").
+own("V","res").
+subtract("R","res").
+tight_physical_adherence("V","res"). 
+resistence("V","R").
+take_possession("R","res").
+
+theft_intention("R").
+physical_object("orologio").
+own("V","orologio").
+subtract("R","orologio").
+block("R","V","braccio").
+part_of_body("V","braccio").
+res_violence(“R”,”orologio”).
+take_possession("R","orologio").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">
+    #pos({
+    	robbery("R","V")
+	},{
+   	 
+	},{
+    	theft_intention("R").
+    	res("res").
+    	own("V","res").
+    	subtract("R","res").
+    	tight_physical_adherence("V","res"). % la person_violence è data da subtract e tight_physical_adherence  
+    	resistence("V","R").
+    	take_possession("R","res").
+	}).
+
+    #pos({
+        theft_snatch("R","V")
+    },{
+        
+    },{
+         theft_intention("R").
+         physical_object("orologio").
+         own("V","orologio").
+         subtract("R","orologio").
+         block("R","V","braccio").
+        part_of_body("V","braccio").
+         res_violence("R","orologio").
+         take_possession("R","orologio").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Genova sez. II, 06/09/2023, n.2622</b></span>
+Il furto anche aggravato resta nella forma tentata se non c'è impossessamento di alcun bene
+In materia di furto, anche aggravato, il reato resta nella forma tentata nel caso in cui pur essendo state poste in essere condotte dirette in modo non equivoco all'impossessamento (di beni come l'apertura e/o la forzatura di armadietti e porte) il soggetto agente non abbia asportato alcunché.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">open("R","armadietti").
+open("R","porte").
+force("R","armadietti").
+force("R","porte").
+own("V","oggetto").
+subtract("R","oggetto").
+:- take_possession("R","oggetto"). % si può omettere
+res("oggetto").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+    	attempted_theft("R","V","oggetto"),
+    	theft_intention("R")
+	},{
+    	take_possession("R","oggetto")
+	},{
+    	open("R","armadietti").
+    	open("R","porte").
+    	force("R","armadietti").
+    	force("R","porte").
+    	own("V","oggetto").
+    	subtract("R","oggetto").
+    	res("oggetto").
+	}).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Corte appello Roma sez. IV, 03/10/2023, n.9885</b></span>
+Usare violenza contro la vittima per sottrarre la borsa integra rapina e non furto con strappo
+Non integra il reato di furto con strappo bensì quello di rapina la condotta dei coimputati che si sostanzi nella sottrazione della borsa della persona offesa, come atto finale di un concorso dei due soggetti che con l'uso della violenza abbiano aggredito la vittima per poi scappare con il bottino, svolgendo la condotta senza soluzione di continuità.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">theft_intention("R").
+own("V","borsa").
+subtract("R","borsa").
+take_possession("R","borsa").
+assault("R","V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+    	robbery("R","V","borsa"),
+    	damage("R","V")
+	},{
+    	theft_snatch("R","V")
+	},{
+    	theft_intention("R").
+    	own("V","borsa").
+    	subtract("R","borsa").
+    	take_possession("R","borsa").
+    	assault("R","V").
+	}).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Corte appello Ancona, 11/10/2023, n.2307</b></span>
+In ordine al reato di furto, l'illecito sussiste nell'ipotesi in cui il reo l'imputato sottragga merce dagli scaffali, occultandola in una borsa, senza pagare il prezzo della stessa
+Risulta pienamente integrato il delitto di furto, nell'ipotesi in cui l'imputato venga avvistato mentre sottraeva dagli scaffali del negozio un trapano ed una latta d'olio e li inseriva in una borsa in tela scura che aveva con sé, per poi recarsi verso l'uscita, senza corrisponderne il prezzo. 
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">theft_intention("R").
+own("V","merce").
+subtract("R","merce").
+take_possession("R","merce").
+hide("R","merce").
+:- pay("R","merce").
+res("merce").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+    	theft("R","V","merce")
+	},{
+    	pay("R","merce")
+	},{
+    	theft_intention("R").
+    	own("V","merce").
+    	subtract("R","merce").
+    	take_possession("R","merce").
+    	hide("R","merce").
+    	res("merce").
+	}).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Nocera Inferiore, 02/11/2023, n.2208</b></span>
+Integra il furto e non la rapina la condotta repentina e violenta del soggetto agente non abbia dovuto superare alcuna resistenza della vittima
+Integra il reato di furto e non quello di rapina se il soggetto agente non abbia dovuto superare alcuna resistenza della vittima, in forza anche dell'effetto sorpresa derivante dalla repentinità dell'azione, attuando una violenza diretta sulla refurtiva e solo indirettamente coinvolgente la vittima, la quale non ha riportato alcun pregiudizio fisico. Il furto è quello in abitazione, di cui all'art. 624 bis c.p., se la condotta criminosa sopra descritta si sia verificata nell'abitazione della vittima, anche se il soggetto agente è stato fatto entrare dalla stessa vittima.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">theft_intention("R").
+own("V","oggetto").
+subtract("R","oggetto").
+take_possession("R","oggetto").
+:- resistence("V","R"). % si può omettere
+res_violence("R","oggetto").
+res("oggetto").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+    	theft_snatch("R","V")
+	},{
+    	robbery("R","V"),
+    	resistence("V","R")
+	},{
+    	theft_intention("R").
+    	own("V","oggetto").
+    	subtract("R","oggetto").
+    	take_possession("R","oggetto").
+    	res_violence("R","oggetto").       
+    	res("oggetto").
+	}).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Frosinone, 06/11/2023, n.1571</b></span>
+Forzare le condutture dell'acqua per sottrarne ingenti quantità è furto
+Integra il reato di furto di cui all'art. 624 comma 2, il soggetto che forzando delle condutture sigillate per la sua stessa morosità, sottragga ingenti quantità di acqua alla società gestore delle risorse idriche, dal momento che la risorsa idrica è qualificabile come energia con rilevanza economica.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">own("società idrica","acqua").
+take_possession("R","acqua").
+subtract("R","acqua").
+force("R","condutture acqua"),
+seal("società idrica","condutture acqua"),
+energy("acqua").
+economic_value("acqua").
+agent("società idrica").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+    	theft("R","V","acqua"),
+        theft_intention("R")
+	},{
+
+	},{
+        own("società idrica","acqua").
+        take_possession("R","acqua").
+        subtract("R","acqua").
+	    force("R","condutture acqua"),
+	    seal("società idrica","condutture acqua"),
+	    energy("acqua").
+	    economic_value("acqua").
+	    agent("società idrica").
+	}).</span></pre>
+            </div>
+            </section>
+    </main>
+</body>
+</html>
