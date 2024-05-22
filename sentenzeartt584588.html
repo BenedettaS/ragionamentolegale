@@ -178,6 +178,24 @@
         <section>
             <div class="code-section">
                 <pre>
+<span class="center-text"><b>Cassazione penale sez. I, 12/03/2014, n.14647</b></span>
+In tema di reati contro la persona, l'omicidio preterintenzionale si configura allorquando l'azione aggressiva dell'autore del reato sia diretta soltanto a percuotere la vittima o a causarle lesioni, così che la morte costituisce un evento non voluto, ancorché legato da nesso causale alla condotta dell'agente. 
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">death_intention("R").
+cause_death("R", "V").
+
+:- death_intention(R), manslaughter(R, V).</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#neg({
+        manslaughter("R", "V")
+    },{
+
+    },{
+        death_intention("R").
+        cause_death("R", "V").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 21/09/2016, n.44986</b></span>
 Elementi essenziali dell'omicidio preteintenzionale sono atti diretti ad esercitare una coazione fisica sulla persona – riconducibili alla previsione dell'art. 581 c.p. o dell'art. 582 c.p. – che abbiano, come fine ultimo, l'inflizione di una sofferenza (sia essa – nelle percosse – una sensazione di dolore o di fastidio; ovvero – nelle lesioni – una menomazione, anche temporanea, dell'integrità fisica). In ogni caso è richiesta una violenta manomissione della fisicità del soggetto passivo, attuata contro la volontà di quest'ultimo. Di conseguenza, l'elemento psicologico del reato di percosse o lesioni è dato dalla coscienza e volontà di serbare una condotta violenta, tale da cagionare alla vittima una sensazione di dolore (nelle percosse) o una malattia (nelle lesioni). Un siffatto elemento psicologico va escluso qualora la condotta, nel corso di pratiche di bondage e breath playing, non sia diretta a procurare alcuna sofferenza, ma piuttosto un "piacere", sia pure umanamente discutibile. E tanto basta ad escludere che possa realizzarsi il presupposto dell'omicidio preterintenzionale, giacché un'attività ontologicamente rivolta a procurare un piacere non può essere posta sullo stesso piano di un'attività rivolta a procurare una sofferenza, per l'ontologica diversità tra esse esistente. L'ontologicità della condotta – comprensiva di elemento oggettivo e soggettivo – non muta per il fatto che sia caratterizzata (anche) da pratiche costrittive, ovvero per il fatto che l'attività spiegata avrebbe potuto, prevedibilmente, provocare abrasioni o ecchimosi, giacché l'elemento soggettivo dei reati in questione non può essere individuato prescindendo dall'oggetto giuridico del reato, che è dato dalla tutela della incolumità individuale.
 
