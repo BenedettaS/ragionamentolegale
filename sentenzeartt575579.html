@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentenze art. 595 - 609 bis</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('img.png') no-repeat center center fixed; 
+            background-size: cover; 
+        }
+
+        nav {
+            width: 100%;
+            background: #0e1030;
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 2rem;
+            padding: 0.5vw 2.0vw;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            background-color: #12164ea9;
+            color: white;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            margin-top: 4rem;
+        }
+
+        section {
+            padding: 2rem;
+            width: 100vw;
+            max-width: 1100px;
+            background-color: rgba(68, 68, 68, 0.3);
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            margin-top: 1rem;
+        }
+
+        .eb-garamond-h1 {
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 5vw;
+            color: #323232;
+            line-height: 1.1;
+            margin-top: 2rem;
+        }
+
+        .code-section {
+            margin-top: 0rem;
+            padding: 1rem;
+        }
+
+        .code-section h2 {
+            font-size: 1.5rem;
+            color: #0e1030;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .code-section pre {
+            background-color: rgba(244, 244, 244, 0.5);
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 1rem;
+            font-family: "Courier New", Courier, monospace;
+            max-width: 100%;
+            white-space: pre-wrap;
+            text-align: left;
+            margin-bottom: 0rem;
+        }
+
+        .center-text {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .highlight {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: block;
+            padding: 0.5rem;
+            margin-top: 1rem;
+            font-family: "Source Code Pro", "Courier New", Courier, monospace;
+        }
+        
+
+        @media screen and (max-width: 768px) {
+            body {
+                background-size: cover; 
+            }
+
+            .eb-garamond-h1 {
+                font-size: 10vw;
+            }
+        }
+
+        @media screen and (max-width: 460px) {
+            body {
+                background-size: cover;
+            }
+
+            .eb-garamond-h1 {
+                font-size: 12vw;
+                text-align: center;
+            }
+
+            nav{
+                position: fixed;
+            }
+
+            nav a {
+                margin: 0 1rem;
+                font-size: 1rem;
+            }
+
+            .code-section h2 {
+                font-size: 1.1rem;
+            }
+
+            .code-section pre {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="articoli.html">Articoli</a>
+        <a href="sentenze.html">Sentenze</a>
+    </nav>
+
+    <main>
+        <div class="eb-garamond-h1">
+            Sentenze artt. 595 - 609 bis
+        </div>
+
+        <section>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale, sez. I, 05/10/2017, n. 56701</b></span>
+Omicidio volontario per gli imputati che nel corso di una rapina imbavagliano la vittima che puoi muore per soffocamento
+Affinché possa configurarsi il reato di omicidio preterintenzionale, anziché volontario, gli agenti devono aver escluso ogni possibile previsione dell'evento-morte. Diversamente, in presenza di piena consapevolezza delle conseguenze derivanti dall'azione posta in essere, si configura il reato di omicidio volontario (confermata la condanna degli imputati per i reati di omicidio volontario e rapina ai danni di un anziano il quale, legato ed imbavagliato, decedeva per soffocamento).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">robbery("R", "V").
+bind("R", "V").
+gag("R", "V").
+cause_death("R", "V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        murder("R", "V")
+    },{
+        manslaughter("R", "V")
+    },{
+        robbery("R", "V").
+        bind("R", "V").
+        gag("R", "V").
+        cause_death("R", "V").
+    }).
+</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale, sez. I, 22/12/2017, n. 3619</b></span>
+È colpevole anche di omicidio volontario il rapinatore occludendo naso e bocca della vittima ne cagiona la morte
+Si configura il delitto di omicidio volontario – e non quello di omicidio preterintenzionale, caratterizzato dalla totale assenza di volontà omicida – qualora la condotta dell'agente, alla stregua delle regole di comune esperienza, dimostri la consapevole accettazione da parte del medesimo anche solo dell'eventualità che dal suo comportamento potesse derivare la morte del soggetto passivo. (Fattispecie in cui i colpevoli, nel corso di una rapina commessa nell'abitazione di una persona anziana, le avevano oppresso ed occluso il naso e la bocca con un cuscino ed un canovaccio, impedendole di respirare e cagionandone la morte, intervenuta per soffocamento).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">robbery("R", "V").
+obstruct("R", "V", "naso").
+obstruct("R", "V", "bocca").
+cause_death("R", "V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        murder("R", "V")
+    },{
+        manslaughter("R", "V")
+    },{
+        robbery("R", "V").
+        obstruct("R", "V", "naso").
+        obstruct("R", "V", "bocca").
+        cause_death("R", "V").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale, sez. I, 29/01/2019, n. 16116</b></span>
+In tema di delitti contro la persona, per distinguere il reato di lesione personale da quello di tentato omicidio, occorre avere riguardo sia al diverso atteggiamento psicologico dell'agente sia alla differente potenzialità dell'azione lesiva, desumibili dalla sede corporea attinta, dall'idoneità dell'arma impiegata, nonché dalle modalità dell'atto lesivo (Fattispecie in cui è stato ritenuto sussistente il tentato omicidio per essere stata la vittima colpita da 11 coltellate).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V").
+number_of_wounds("V", 11).
+:- cause_death("R", "V"). % si può omettere</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        attempted_murder("R", "V")
+    },{
+        cause_death("R", "V")
+    },{
+        stab("R", "V").
+        number_of_wounds("V", 11).
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Taranto sez. II, 14/10/2020, n.795</b></span>
+Costituiscono elementi fattuali sintomatici dell'animus nocendi dell'imputato per tentato omicidio, integrante il dolo intenzionale di omicidio, l'aver utilizzato nella propria azione una pistola, arma maggiormente offensiva per causare la morte, l'aver sparato in un distretto vitale quale il volto e l'elevato numero di colpi esplosi (nel caso di specie 5)
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">use_object("R", "V", "arma da fuoco").
+shoot("R", "V", "volto").
+    
+:- cause_death("R", "V"). % si può omettere</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        attempted_murder("R", "V")
+    },{
+        cause_death("R", "V")
+    },{
+        use_object("R", "V", "arma da fuoco").
+        shoot("R", "V", "volto").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Corte appello Ancona, 17/02/2021, n.1604</b></span>
+Per la distinzione tra il reato di lesioni personali e quello di tentato omicidio rileva il diverso atteggiamento psicologico dell'agente e la potenzialità lesiva delle azioni. Per il primo l'offensività del reato si esaurisce con l'evento realizzato; nel secondo invece l'azione tende ed è idonea a causare la lesione di un bene giuridico superiore, la cui mancata realizzazione prescinde dalla volontà dell'agente. Nel caso di specie l'aver sferrato, mediante un coltello con lama 15 cm e con grande violenza, due coltellate all'addome della p.o. costituisce condotta idonea e diretta a causare la morte della stessa, di talché la condotta non è idonea ad essere derubricata nel reato di lesioni personali.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">damage("R", "V").
+stab("R", "V", "addome").
+part_of_body("addome").
+violence("R", "V").
+:- cause_death("R", "V").
+    
+:- death_intention(R), personal_injuries(R, V, I).</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        attempted_murder("R", "V")
+    },{
+        personal_injuries("R", "V", "illness"),
+        cause_death("R", "V")
+    },{
+        damage("R", "V").
+        stab("R", "V", "addome").
+        part_of_body("addome").
+        violence("R", "V").
+    }).
+
+#neg({
+        personal_injuries("R", "V", "illness")
+    },{
+
+    },{
+        death_intention("R").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. I, 06/10/2021, n.14751</b></span>
+È configurabile il delitto di omicidio volontario, e non l'omicidio del consenziente, nel caso in cui manchi una prova univoca, chiara e convincente della volontà di morire manifestata dalla vittima, dovendo in tal caso riconoscersi assoluta prevalenza al diritto alla vita, quale diritto personalissimo che non attribuisce a terzi il potere di disporre, anche in base alla propria percezione della qualità della vita, dell'integrità fisica altrui (nella specie, relativa all'uccisione di una donna da parte del marito che si era risolto all'omicidio al solo fine di assecondare la volontà della moglie, che aveva iniziato a soffrire di forti dolori per pregresse patologie non risolte da un intervento chirurgico subito, la Corte ha ritenuto che le generiche invocazioni della vittima nel giorno dell'evento, dipendenti dalla sofferenza provata e dall'obnubilazione causata dai farmaci assunti, non potessero qualificare la condotta dell'uomo quale omicidio del consenziente).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">incapacity_understanding("V").
+cause_death("R", "V").
+death_intention("R"). % ne ha provocato la morte senza essere supportato da consenso
+
+:- incapacity_understanding(V), consent(V). </span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        murder("R", "V")
+    },{
+        consent("V"),
+        consenting_murder("R", "V")
+    },{
+        incapacity_understanding("V").
+        cause_death("R", "V").
+        death_intention("R").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. I, 30/03/2022, n.29611</b></span>
+In tema di tentato omicidio, è configurabile il dolo diretto nella condotta dell'agente che, dopo aver superato la rete metallica posta a protezione di un cavalcavia autostradale, lanci in immediata successione due sassi di rilevante massa sulla carreggiata al momento del passaggio di un'autovettura, ben visibile dall'alto.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">throw("R", "V", "sasso").
+go_through("V", "auto").
+:- cause_death("R", "V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        attempted_murder("R", "V")
+    },{
+        cause_death("R", "V")
+    },{
+        throw("R", "V", "sasso").
+        go_through("V", "auto").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. I, 05/04/2022, n.24173</b></span>
+In tema di delitti contro la persona, per distinguere il reato di lesione personale da quello di tentato omicidio occorre avere riguardo sia al diverso atteggiamento psicologico dell'agente sia alla differente potenzialità dell'azione lesiva, desumibili dalla sede corporea attinta, dall'idoneità dell'arma impiegata, nonché dalle modalità dell'atto lesivo. (Fattispecie in cui la Corte ha ritenuto sussistente il delitto di tentato omicidio per avere l'agente colpito la vittima alla zona orbitale con un cacciavite, penetrato nell'encefalo in modo obliquo solo per il movimento difensivo di questa).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V", "zona orbitale").
+part_of_body("V", "zona orbitale").
+defense("V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        attempted_murder("R", "V")
+    },{
+
+    },{
+        stab("R", "V", "zona orbitale").
+        part_of_body("V", "zona orbitale").
+        defense("V").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. I, 21/07/2022, n.40819</b></span>
+L'accordo di commettere la rapina con arma da fuoco comporta il concorso ordinario nel delitto di omicidio
+La partecipazione all'accordo per commettere una rapina utilizzando un'arma da fuoco comporta la responsabilità, a titolo di concorso ordinario e non anomalo, anche per l'omicidio (o il tentato omicidio) commesso nel corso della sua esecuzione dal complice che ha in concreto cagionato la morte del rapinato dovendosi ritenere prevedibile detto evento lesivo, quale ordinario possibile sviluppo della condotta criminosa qualificata dall'uso delle armi.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">robbery("R", "V").
+use_object("R", "V", "arma da fuoco").
+cause_death("R", "V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+    	murder("R", "V")
+	},{
+
+	},{
+    	robbery("R", "V").
+    	use_object("R", "V", "arma da fuoco").
+    	cause_death("R", "V").
+	}).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale, sez. I, sent., 23/12/2022 n. 48944</b></span>
+È configurabile il dolo diretto del delitto di omicidio nella condotta del medico, non orientata da finalità terapeutiche, anche solo di natura palliativa, che somministri arbitrariamente al paziente farmaci sedativi e anestetici con esito letale, a nulla rilevando la finalità eutanasica del trattamento.
+Integra il reato di omicidio volontario la somministrazione di trattamenti di medicina palliativa, dai quali consegua, anche come anticipazione secondaria, la morte del paziente, nel caso in cui non siano ritualmente adottati i relativi protocolli terapici e le cure siano somministrate in assenza della una previa accurata anamnesi del dolore e dell'acquisizione del consenso libero, consapevole e informato dell'interessato.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">:- consent("V").
+administer("R", "V", "farmaci sedativi").
+administer("R", "V", "farmaci anestetici").
+medicine("farmaci sedativi").
+medicine("farmaci anestetici").
+cause_death("R", "V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        murder("R", "V")
+    },{
+        consenting_murder("R", "V"),
+        consent("V")
+    },{
+        administer("R", "V", "farmaci sedativi").
+        administer("R", "V", "farmaci anestetici").
+        medicine("farmaci sedativi").
+        medicine("farmaci anestetici").
+        cause_death("R", "V").
+    })./span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Corte appello Ancona, 23/01/2023, n.2104</b></span>
+La volontarietà del fendente inferto alla vittima esclude la sussistenza delle lesioni personali colpose
+Non può ritenersi sussistente il reato di lesioni personali colpose, sussistendo quello di tentato omicidio, quando dalla ricostruzione dinamica del fendente inferto alla vittima, si evinca chiaramente la volontarietà della condotta, finalizzata a trafiggere la vittima e togliergli la vita.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V").
+:- cause_death("R", "V").
+death_intention("R").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        attempted_murder("R", "V")
+    },{
+        cause_death("R", "V")
+    },{
+        stab("R", "V").
+        death_intention("R").
+    }).
+</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. I, 19/06/2023 n. 26316</b></span>
+In tema di elemento soggettivo del reato, non sussiste incompatibilità tra dolo d'impeto e dolo eventuale, in quanto l'agire sulla spinta emotiva del momento non esclude la lucidità mentale e le facoltà cognitive che consentono di prevedere e accettare il rischio della verificazione dell'evento quale conseguenza della propria azione. (Fattispecie in materia di omicidio, commesso mediante lo spruzzo di alcol denaturato all'altezza del tronco della vittima mentre questa si trovava ai fornelli).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">caused_by("R", "V", "alcol denaturato", "death").
+substance("alcol denaturato").
+cause_death("R", "V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        murder("R", "V")
+    },{
+        
+    },{
+        caused_by("R", "V", "alcol denaturato", "death").
+        substance("alcol denaturato").
+        cause_death("R", "V").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Tribunale Lecce sez. I, 13/07/2023, n.2529</b></span>
+In tema di tentato omicidio sotto il profilo dell'idoneità oggettiva dell'avvenuta aggressione a determinare le conseguenze letali ipotizzate dall'accusa, è evidente come un plurimo accoltellamento in direzione del fianco della vittima, con parte dei colpi andati a segno e parte parati dagli arti dell'aggredito sia condotta eziologicamente adeguata, già in via astratta, a determinare la morte del destinatario, in ragione della presenza di organi vitali nella zona presa di mira.
+
+<span class="center-text"><b>Codice ASP</b><span class="highlight">stab("R", "V", "organi vitali").
+part_of_body("V", "organi vitali").
+resistence("V", "R").
+:- cause_death("R", "V").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        attempted_murder("R", "V")
+    },{
+        cause_death("R", "V")
+    },{
+        stab("R", "V", "organi vitali").
+        part_of_body("V", "organi vitali").
+        resistence("V", "R").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. I, 13/07/2023, n.44677</b></span>
+Sussiste il delitto di omicidio volontario, e non quello di omicidio preterintenzionale, caratterizzato dalla totale assenza di volontà omicida, nel caso in cui la condotta dell'agente riveli, alla stregua delle regole di comune esperienza, la consapevole accettazione, da parte del predetto, anche solo dell'eventualità che dal proprio comportamento possa derivare la morte del soggetto passivo. (Fattispecie in cui è stata esclusa la preterintenzione sul rilievo che l'imputato avesse colpito al volto la moglie con uno schiaffo e una stampella, cagionandole un poli-traumatismo da contusioni che, in un soggetto già in precarie condizioni di salute perché affetto da altre patologie, nonché in stato settico, ne aveva comportato il decesso).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">slap("R", "V").
+use_object("R", "V", "stampella").
+derive("V", "contusione").
+derive_illness("V").
+illness("contusion").
+cause_death("R", "V").
+death_intention("R").
+:- consent("V").    </span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        murder("R", "V")
+    },{
+        consent("V"),
+        consenting_murder("R", "V")
+    },{
+        slap("R", "V").
+        use_object("R", "V", "stampella").
+        derive("V", "contusione").
+        derive_illness("V").
+        illness("contusione").
+        cause_death("R", "V").
+        death_intention("R").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Corte assise Roma, 10/12/1983</b></span>
+L'uccisione del figlio adottivo handicappato grave in quanto affetto da idrocefalo congenito, per motivi di pietà, con un colpo di arma da fuoco, integra gli estremi non già del reato di omicidio comune, bensì quelli del reato di omicidio del consenziente, ove risulti validamente manifestato il consenso della vittima alla propria uccisione (nella specie, si è affermato che non essendo la insufficienza mentale di grado tale da escludere del tutto la capacità di intendere della vittima, non ne è risultata compromessa la validità del consenso manifestato).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">consent("V").
+has_illness("V", "idrocefalo congenito").
+illness("idrocefalo congenito").
+cause_death("R", "V").
+death_intention("R").</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        consenting_murder("R", "V"),
+        handicap("V")
+    },{
+        murder("R", "V"),
+        incapacity_understanding("V")
+    },{
+        consent("V").
+        has_illness("V", "idrocefalo congenito").
+        illness("idrocefalo congenito").
+        cause_death("R", "V").
+        death_intention("R").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Corte assise Trieste, 02/05/1988</b></span>
+Non integra gli estremi del reato di omicidio comune aggravato, bensì del reato di omicidio del consenziente, l'uccisione della propria madre colpita da affezione morbosa inguaribile, anche se non giunta allo stadio terminale, quando risulti accertato che l'infermità non ha determinato nella vittima una deficienza psichica tale da renderne invalido il consenso.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">consent("V").
+has_illness("V", "affezione morbosa inguaribile").
+illness("affezione morbosa inguaribile").
+cause_death("R", "V").
+death_intention("R").
+:- incapacity_understanding("V").
+
+:- handicap(V), incapacity_understanding(V), consent(V).</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        consenting_murder("R", "V")
+    },{
+        murder("R", "V"),
+        incapacity_understanding("V")
+    },{
+        consent("V").
+        has_illness("V", "affezione morbosa inguaribile").
+        illness("affezione morbosa inguaribile").
+        cause_death("R", "V").
+        death_intention("R").
+    }).</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
+<span class="center-text"><b>Cassazione penale sez. I, 17/11/2010, n.43954</b></span>
+È configurabile il delitto di omicidio volontario, e non l'omicidio del consenziente, nel caso in cui manchi una prova univoca, chiara e convincente della volontà di morire manifestata dalla vittima, dovendo in tal caso riconoscersi assoluta prevalenza al diritto alla vita, quale diritto personalissimo che non attribuisce a terzi (nella specie ad un familiare) il potere di disporre, anche in base alla propria percezione della qualità della vita, dell'integrità fisica altrui. (Nella specie la Corte ha escluso che una tale prova potesse essere tratta dalle generiche invocazioni della vittima affinché cessasse la propria sofferenza o dall'auspicio, dalla stessa espresso in precedenza, di adozione di modelli eutanasici propri di altri paesi).
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">death_intention("R").
+cause_death("R", "V").
+    
+:- not consent(V), consenting_murder(R, V).</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+    	murder("R", "V")
+	},{
+    	consenting_murder("R", "V")
+	},{
+    	death_intention("R").
+    	cause_death("R", "V").
+	}).
+
+#neg({
+    	consenting_murder("R", "V")
+	},{
+    	consent("V")
+	}).
+
+</span></pre>
+        </div>
+<span class="center-text"><b>Cassazione penale sez. I, 26/05/2017, n.3392</b></span>
+Esclusa l'ipotesi di omicidio del consenziente se la vittima versa in condizioni patologiche di deficienza psichica
+Secondo quanto disposto dall'art. 579, comma 3, n. 2, c.p., deve trovare applicazione la disposizione relativa all'omicidio volontario allorché il fatto sia commesso in danno di una persona che versi in condizioni (patologiche) di deficienza psichica.
+
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">handicap("V").
+incapacity_understanding("V").
+death_intention("R").
+cause_death("R", "V").
+    
+:- handicap(V), incapacity_understanding(V), consent(V).</span>
+<span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
+        murder("R", "V")
+    },{
+        consenting_murder("R", "V")
+    },{
+        handicap("V").
+        incapacity_understanding("V").
+        death_intention("R").
+        cause_death("R", "V").
+    }).
+
+#neg({
+        consent("V")
+    },{
+
+    },{
+        handicap("V").
+        incapacity_understanding("V").
+    }).</span></pre>
+</div>
+            </section>
+    </main>
+</body>
+</html>
