@@ -174,8 +174,22 @@
         <div class="eb-garamond-h1">
             Sentenze art. 583
         </div>
+     <section>
+        <div class="code-section">
+                <h2>Art. 583</h2>
+                <pre>
+Si riportano i codici identificativi delle sentenze con le regole individuate in modo tale da fare riferimento a tali sentenze in caso di presenza degli stessi predicati.
+<span class="highlight">agent("R").
+agent("V").
+    
+%%% CODICI IDENTIFICATIVI SENTENZE
+%%% CODICI IDENTIFICATIVI SENTENZE
+%  #1: Cassazione penale sez. IV, 13/10/1988, n.9933
+%  #2: Tribunale Firenze sez. I, 11/03/2016, n.1713
 
-        <section>
+2{damage(R, V); using_judgment("#1")}2 :- illness("silicosi"), caused_by(R, V, H, I), substance(H).
+2{damage(R, V); using_judgment("#2")}2 :- avulsion(R, V, F), organ(F).</span></pre>
+        </div>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 24/04/1987, n.5087</b></span>
