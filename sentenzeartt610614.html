@@ -195,7 +195,8 @@ agent("V").
 2{deprive_freedom(R, V); using_judgment("#2")}2 :- occupy(R, V, C), force(R, V, A).
 2{break_into_dwelling(R, V, C); using_judgment("#3")}2 :- force(R, C), dwelling(V, C).
 2{threat(R, V); using_judgment("#4")}2 :- surpass(R, V), block_way(R, V).
-2{break_into_dwelling(R, V, "parcheggio condominiale"); using_judgment("#5")}2 :- park(R, "parcheggio condominiale", "moto"), park(R, "parcheggio condominiale", "auto"), dwelling(V, "parcheggio condominiale").</span></pre>
+2{break_into_dwelling(R, V, "parcheggio condominiale"); using_judgment("#5")}2 :- 
+park(R, "parcheggio condominiale", "moto"), park(R, "parcheggio condominiale", "auto"), dwelling(V, "parcheggio condominiale").</span></pre>
             </div>
             <div class="code-section">
                 <pre>
@@ -217,7 +218,7 @@ block_way("R", "V").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 14/12/2022, n.3991</b></span>
-Commette il reato di violenza privata l'imputato che si barrica in casa impedendo al convivente di accedervi
+Commette il reato di violenza privata l'imputato che si barrica in casa impedendo al convivente di accedervi.
 In tema di violenza privata, l'elemento della violenza si identifica in qualsiasi mezzo idoneo a privare coattivamente la persona offesa della libertà di azione e di determinazione. (Fattispecie relativa a imputato che si era barricato in casa, impedendo al convivente di accedervi) .
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">occupy("R", "V", "casa").
@@ -254,7 +255,7 @@ force("R", "V", "rimanere").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 27/01/2023, n.20365</b></span>
-Nel reato di violenza privata occorre che la minaccia sia diretta a costringere taluno a fare, tollerare od omettere qualcosa
+Nel reato di violenza privata occorre che la minaccia sia diretta a costringere taluno a fare, tollerare od omettere qualcosa.
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">threat("R", "V").
 force("R", "V", "fare"), force("R", "V", "omettere"), force("R", "V", "tollerare").
@@ -312,7 +313,7 @@ action("obbedire").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Tribunale Frosinone, 20/10/2023, n.1588</b></span>
-Introdursi in casa della p.o. distruggere i beni e costringere la stessa a trovare riparo in una stanza integra sia violazione di domicilio sia violenza privata
+Introdursi in casa della p.o. distruggere i beni e costringere la stessa a trovare riparo in una stanza integra sia violazione di domicilio sia violenza privata.
 Integra il reato di violazione di domicilio e violenza privata il prevenuto che, brandendo una mazza, forzi l'ingresso di casa della p.o. la aggredisca e minacci, distrugga beni presenti nell'immobile e costringe la p.o. a barricarsi in una delle stanze della casa per trovare riparo, dandosi alla fuga solo con l'intervento delle forze dell'ordine chiamate dalla p.o..
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">dwelling("V", "ingresso").
@@ -401,8 +402,8 @@ action("uscire").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Tribunale La Spezia sez. uff. indagini prel., 22/10/2020</b></span>
-Non commette violazione di domicilio chi entri in una coorte condominiale di proprietà di un ente per dare cibo ai gatti
-Non integra il reato di violazione di domicilio la condotta di soggetto che entri in una coorte condominiale  di proprietà di un ente in cui i locatari avevano denunciato la condotta di violazione di domicilio per aver  lo stesso dato del cibo ai gatti  sporcando la corte stessa.
+Non commette violazione di domicilio chi entri in una coorte condominiale di proprietà di un ente per dare cibo ai gatti.
+Non integra il reato di violazione di domicilio la condotta di soggetto che entri in una coorte condominiale di proprietà di un ente in cui i locatari avevano denunciato la condotta di violazione di domicilio per aver lo stesso dato del cibo ai gatti sporcando la corte stessa.
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">feed("R", "gatti").
 dwelling("V", "coorte").
@@ -421,7 +422,7 @@ dwelling("V", "coorte").
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 13/07/2022, n.34784</b></span>
-Le pertinenze di una privata dimora - quali, nel caso in esame, le scale e l'androne di un palazzo - rientrano senza alcun dubbio nel concetto di privata dimora - a sua volta più ampio di quello di casa di abitazione - in quanto luoghi suscettibili di essere utilizzati, non occasionalmente, ma in maniera apprezzabile ancorché contingente, per lo svolgimento di una attività personale, rientrante nella larga accezione di libertà domestica e di manifestazione della vita privata; ciò grazie alla durata apprezzabile del rapporto tra il luogo e la persona, basato sulla connotazione pertinenziale di tali ambienti rispetto all'abitazione principale, che li rende non accessibili ai terzi, senza il consenso
+Le pertinenze di una privata dimora - quali, nel caso in esame, le scale e l'androne di un palazzo - rientrano senza alcun dubbio nel concetto di privata dimora - a sua volta più ampio di quello di casa di abitazione - in quanto luoghi suscettibili di essere utilizzati, non occasionalmente, ma in maniera apprezzabile ancorché contingente, per lo svolgimento di una attività personale, rientrante nella larga accezione di libertà domestica e di manifestazione della vita privata; ciò grazie alla durata apprezzabile del rapporto tra il luogo e la persona, basato sulla connotazione pertinenziale di tali ambienti rispetto all'abitazione principale, che li rende non accessibili ai terzi, senza il consenso.
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">dwelling("V", "androne palazzo").
 dwelling("V", "scale palazzo").
