@@ -177,6 +177,25 @@
 
         <section>
             <div class="code-section">
+                <h2>Artt. 595-609bis</h2>
+                <pre>
+Si riportano i codici identificativi delle sentenze con le regole individuate in modo tale da fare riferimento a tali sentenze in caso di presenza degli stessi predicati.
+<span class="highlight">agent("R").
+agent("V").
+
+%%% CODICI IDENTIFICATIVI SENTENZE ARTT. 595 - 609 bis
+%  #1: Cassazione penale, sez. V, 31/05/2023, n. 36468
+%  #2: Corte appello Napoli sez. III, 31/07/2023, n.7725
+%  #3: Cassazione penale, sez. V, 23/01/2024, n. 17141
+%  #4: Tribunale Cassino, 05/02/2024, n.30
+
+2{spread(R, "frasi lesive", V, T); using_judgment("#1")}2 :- spread(R, "che carogne", V, T).
+2{comunicate(R, T); using_judgment("#2")}2 :- spread(R, W, V, T).
+2{offend(R, V); using_judgment("#3")}2 :- spread(R, "foto offensiva", V, T).
+2{comunicate(R, T); using_judgment("#4")}2 :- spread(R, W, V, T), social(T).
+2{agent(T); using_judgment("#4")}2 :- spread(R, W, V, T), social(T).</span></pre>
+            </div>
+            <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 31/05/2023, n.36468</b></span>
 Nella specie, la locuzione "che carogne", collocata in un post su Facebook dalla imputata, assume un valore nettamente offensivo nei confronti della funzione svolta dal Corpo della Polizia Locale non sostanziandosi in una semplice descrizione della situazione dalla quale era scaturita la sanzione inflitta alla stessa, né in una legittima valutazione critica sull'operato dei verbalizzanti, ma spingendosi a una denigrazione gratuita, esplicitamente lesiva non solo della dignità, ma anche delle prerogative lavorative dei destinatari, difettando la correlazione tra il comportamento assunto dai verbalizzanti e il commento pubblicato
