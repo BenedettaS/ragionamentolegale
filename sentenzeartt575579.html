@@ -208,7 +208,7 @@ agent("V").
 3{death_intention(R); damage(R, V); using_judgment("#7")}3 :- stab(R, V, "zona orbitale"), part_of_body(V, "zona orbitale").
 2{death_intention(R); using_judgment("#8")}2 :- robbery(R, V), use_object(R, V, "arma da fuoco").
 2{murder(R, V); using_judgment("#9")}2 :- administer(R, V, N), medicine(N), cause_death(R, V).
-2{damage(R, V); using_judgment("#10")}2 :- stab("R", "V").
+2{damage(R, V); using_judgment("#10")}2 :- stab(R, V).
 2{death_intention(R); using_judgment("#11")}2 :- caused_by(R, V, "alcol denaturato", "death"), substance("alcol denaturato").
 3{death_intention(R); damage(R, V); using_judgment("#12")}3 :- stab(R, V, "organi vitali"), part_of_body(V, "organi vitali").
 2{handicap(V); using_judgment("#13")}2 :- has_illness(V, "idrocefalo congenito"), illness("idrocefalo congenito").
