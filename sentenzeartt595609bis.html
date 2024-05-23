@@ -191,6 +191,7 @@ agent("V").
 
 2{spread(R, "frasi lesive", V, T); using_judgment("#1")}2 :- spread(R, "che carogne", V, T).
 2{comunicate(R, T); using_judgment("#2")}2 :- spread(R, W, V, T).
+2{agent(T); using_judgment("#2")}2 :- spread(R, W, V, T).
 2{offend(R, V); using_judgment("#3")}2 :- spread(R, "foto offensiva", V, T).
 2{comunicate(R, T); using_judgment("#4")}2 :- spread(R, W, V, T), social(T).
 2{agent(T); using_judgment("#4")}2 :- spread(R, W, V, T), social(T).</span></pre>
