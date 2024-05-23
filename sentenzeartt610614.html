@@ -176,6 +176,27 @@
         </div>
 
         <section>
+             <div class="code-section">
+                <h2>Artt. 610-614</h2>
+                <pre>
+Si riportano i codici identificativi delle sentenze con le regole individuate in modo tale da fare riferimento a tali sentenze in caso di presenza degli stessi predicati.
+<span class="highlight">agent("R").
+agent("V").
+
+%%% CODICI IDENTIFICATIVI SENTENZE ARTT. 610 - 614
+%  #1: Cassazione penale sez. V, 17/11/2022, n. 9957
+%  #2: Cassazione penale sez. V, 14/12/2022, n. 3991
+%  #3: Tribunale Frosinone, 20/10/2023, n.1588
+%  #4: Tribunale Udine, 13/11/2023, n. 2132
+%  #5: Cassazione penale, sez. V, 05/05/2023, n. 31700
+
+2{violence(R, V); using_judgment("#1")}2 :- deprive_freedom(R, V).
+2{deprive_freedom(R, V); using_judgment("#1")}2 :- block_way(R, V), force(R, V, A).
+2{deprive_freedom(R, V); using_judgment("#2")}2 :- occupy(R, V, C), force(R, V, A).
+2{break_into_dwelling(R, V, C); using_judgment("#3")}2 :- force(R, C), dwelling(V, C).
+2{threat(R, V); using_judgment("#4")}2 :- surpass(R, V), block_way(R, V).
+2{break_into_dwelling(R, V, "parcheggio condominiale"); using_judgment("#5")}2 :- park(R, "parcheggio condominiale", "moto"), park(R, "parcheggio condominiale", "auto"), dwelling(V, "parcheggio condominiale").</span></pre>
+            </div>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. V, 17/11/2022, n.9957</b></span>
