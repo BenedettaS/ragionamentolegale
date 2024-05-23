@@ -178,6 +178,41 @@
         <section>
             <div class="code-section">
                 <pre>
+<span class="highlight">
+%%% CODICI IDENTIFICATIVI SENTENZE ARTT. 575 - 579
+%  #1: Cassazione penale, sez. I, 05/10/2017, n. 56701
+%  #2: Cassazione penale, sez. I, 22/12/2017, n. 3619
+%  #3: Cassazione penale, sez. I, 29/01/2019, n. 16116
+%  #4: Tribunale Taranto sez. II, 14/10/2020, n. 795
+%  #5: Corte appello Ancona, 17/02/2021, n. 1604
+%  #6: Cassazione penale, sez. I, 30/03/2022, n. 29611
+%  #7: Cassazione penale, sez. I, 05/04/2022, n. 24173
+%  #8: Cassazione penale, sez. I, 21/07/2022, n. 40819
+%  #9: Cassazione penale, sez. I, sent., 23/12/2022 n. 48944
+% #10: Corte appello Ancona, 23/01/2023, n.2104
+% #11: Cassazione penale sez. I, 19/06/2023 n. 26316
+% #12: Tribunale Lecce sez. I, 13/07/2023, n.2529
+% #13: Corte assise Roma, 10/12/1983
+% #14: Corte assise Trieste, 02/05/1988 
+    
+2{aware_of_consequences(R); using_judgment("#1")}2 :- robbery(R, V), bind(R, V), gag(R, V).
+2{death_intention(R); using_judgment("#1")}2 :- aware_of_consequences(R).
+2{aware_of_consequences(R); using_judgment("#2")}2 :- robbery(R, V), obstruct(R, V, "naso"), obstruct(R, V, "bocca").
+3{death_intention(R); damage(R, V); using_judgment("#3")}3:- stab(R, V), number_of_wounds(V, 11).
+3{death_intention(R); damage(R, V); using_judgment("#4")}3 :- use_object(R, V, "arma da fuoco"), shoot(R, V, "volto").
+2{death_intention(R); using_judgment("#5")}2 :- stab(R, V, "addome"), part_of_body("addome"), violence(R, V).
+3{death_intention(R); damage(R, V); using_judgment("#6")}3 :- throw(R, V, "sasso"), go_through(V, "auto").
+3{death_intention(R); damage(R, V); using_judgment("#7")}3 :- stab(R, V, "zona orbitale"), part_of_body(V, "zona orbitale").
+2{death_intention(R); using_judgment("#8")}2 :- robbery(R, V), use_object(R, V, "arma da fuoco").
+2{murder(R, V); using_judgment("#9")}2 :- administer(R, V, N), medicine(N), cause_death(R, V).
+2{damage(R, V); using_judgment("#10")}2 :- stab("R", "V").
+2{death_intention(R); using_judgment("#11")}2 :- caused_by(R, V, "alcol denaturato", "death"), substance("alcol denaturato").
+3{death_intention(R); damage(R, V); using_judgment("#12")}3 :- stab(R, V, "organi vitali"), part_of_body(V, "organi vitali").
+2{handicap(V); using_judgment("#13")}2 :- has_illness(V, "idrocefalo congenito"), illness("idrocefalo congenito").
+2{handicap(V); using_judgment("#14")}2 :- has_illness(V, "affezione morbosa inguaribile"), illness("affezione morbosa inguaribile").</span></pre>
+            </div>
+            <div class="code-section">
+                <pre>
 <span class="center-text"><b>Cassazione penale, sez. I, 05/10/2017, n. 56701</b></span>
 Omicidio volontario per gli imputati che nel corso di una rapina imbavagliano la vittima che puoi muore per soffocamento
 Affinché possa configurarsi il reato di omicidio preterintenzionale, anziché volontario, gli agenti devono aver escluso ogni possibile previsione dell'evento-morte. Diversamente, in presenza di piena consapevolezza delle conseguenze derivanti dall'azione posta in essere, si configura il reato di omicidio volontario (confermata la condanna degli imputati per i reati di omicidio volontario e rapina ai danni di un anziano il quale, legato ed imbavagliato, decedeva per soffocamento).
