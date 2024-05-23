@@ -177,6 +177,18 @@
 
         <section>
             <div class="code-section">
+                <h2>Artt. 589-589bis</h2>
+                <pre>
+Si riportano i codici identificativi delle sentenze con le regole individuate in modo tale da fare riferimento a tali sentenze in caso di presenza degli stessi predicati.
+<span class="highlight">agent("R").
+agent("V").
+
+%%% CODICI IDENTIFICATIVI SENTENZE ARTT. 589 - 589 bis
+%  #1: Tribunale Frosinone, 21/08/2023, n.1110
+
+2{negligence(R); using_judgment("#1")}2 :- not caution(R), not respect_rules(R, "circolazione stradale"), rules("circolazione stradale"), cause_death(R, V). </span></pre>
+            </div>
+            <div class="code-section">
                 <pre>
 <span class="center-text"><b>Tribunale Frosinone, 11/10/2023, n. 1823</b></span>
 Non può ritenersi provata la responsabilità di omicidio colposo a carico del datore di lavoro per negligenza e mancato rispetto delle disposizioni di sicurezza dei lavoratori, se non vi sia certezza circa la dinamica dell'incidente e tutte le risultanze dei testi e dei medici addebitino le lesioni ad una caduta da bicicletta. 
@@ -260,7 +272,7 @@ rules("circolazione stradale").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Tribunale Frosinone, 21/08/2023, n.1110</b></span>
-La mancata attuazione delle condotte di cautela nella guida comporta la responsabilità per il reato di omicidio stradale
+La mancata attuazione delle condotte di cautela nella guida comporta la responsabilità per il reato di omicidio stradale.
 In un tratto di strada non lontano dal centro cittadino, sprovvista di attraversamento pedonale, in una zona nella quale erano presenti esercizi commerciali, l'imputato avrebbe dovuto prefigurarsi l'attraversamento da parte dei pedoni, in aggiunta alle condizioni di scarsa visibilità, dovute al buio serale, all'assenza di illuminazione pubblica ed alla carente illuminazione artificiale degli esercizi commerciali presenti, sono condizioni che dovrebbero comportare una maggiore cautela alla guida per evitare ogni possibile sinistro. Conseguentemente la mancata attuazione di condotte di massima cautela nella guida determina la responsabilità per il sinistro nel quale ha perso la vita la persona offesa.
 
 <span class="center-text"><b>Codice ASP</b><span class="highlight">:- caution("R").
@@ -280,7 +292,7 @@ rules("circolazione stradale").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. IV, 22/11/2023, n.1929</b></span>
-Esente da responsabilità l’automobilista che procedendo a velocità leggermente superiore ai limiti collide con auto che non rispetta il diritto di precedenza
+Esente da responsabilità l’automobilista che procedendo a velocità leggermente superiore ai limiti collide con auto che non rispetta il diritto di precedenza.
 In tema di circolazione stradale, il principio di affidamento postula che la condotta dell'agente costituisca concausa dell'evento e che non sia prevedibile il comportamento incauto altrui in relazione alle condizioni concrete del fatto, alla singola posizione di garanzia ed all'azione intrapresa. (In applicazione del principio, la Corte ha ritenuto esente da responsabilità, per carenza di concausalità colposa nel delitto di omicidio stradale, un automobilista che, nel percorrere una via con diritto di precedenza a una velocità superiore di soli 16 Km/h ai limiti consentiti, collideva, in prossimità di un incrocio, con un autocarro che non aveva rispettato il diritto di precedenza, il cui conducente, a seguito dell'impatto, decedeva, sul rilievo della irrilevanza, ai fini della causazione dell'esito letale, dell'inosservanza del limite di velocità).
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">higher_speed("R").
@@ -308,7 +320,7 @@ rules("circolazione stradale").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. IV, 16/01/2024, n.9903</b></span>
-Responsabilità dell'omicidio stradale in caso di mancata osservanza della precedenza in un incrocio e di velocità superiore a quella consentita
+Responsabilità dell'omicidio stradale in caso di mancata osservanza della precedenza in un incrocio e di velocità superiore a quella consentita.
 In tema di omicidio stradale, il nesso causale non è di per sè interrotto dalla condotta di guida tenuta dalla persona offesa che viaggia a una velocità superiore a quella consentita (nella specie è stata riconosciuta la responsabilità dell'imputato che non aveva osservato la precedenza, mentre era alla guida di un furgone nell'effettuare la svolta a sinistra in un incrocio, investendo un motociclo proveniente dall'opposto senso di marcia, atteso che in considerazione della velocità del motociclo e della visibilità del conducente, il furgone aveva cominciato la manovra di svolta a sinistra quando il motociclo era già nel suo campo visivo).
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">higher_speed("R").
@@ -317,7 +329,7 @@ negligence("R").
 cause_death("R", "V").
 rules("circolazione stradale").
 :- higher_speed(R), respect_rules(R, "circolazione stradale").
-
+observe_precedence(R) :- respect_rules(R, "circolazione stradale"), rules("circolazione stradale").
 </span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         vehicular_homicide("R", "V")
