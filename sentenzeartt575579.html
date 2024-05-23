@@ -200,18 +200,23 @@ agent("V").
     
 2{aware_of_consequences(R); using_judgment("#1")}2 :- robbery(R, V), bind(R, V), gag(R, V).
 2{death_intention(R); using_judgment("#1")}2 :- aware_of_consequences(R).
-2{aware_of_consequences(R); using_judgment("#2")}2 :- robbery(R, V), obstruct(R, V, "naso"), obstruct(R, V, "bocca").
+2{aware_of_consequences(R); using_judgment("#2")}2 :- robbery(R, V), obstruct(R, V, "naso"), 
+obstruct(R, V, "bocca").
 3{death_intention(R); damage(R, V); using_judgment("#3")}3:- stab(R, V), number_of_wounds(V, 11).
-3{death_intention(R); damage(R, V); using_judgment("#4")}3 :- use_object(R, V, "arma da fuoco"), shoot(R, V, "volto").
-2{death_intention(R); using_judgment("#5")}2 :- stab(R, V, "addome"), part_of_body("addome"), violence(R, V).
+3{death_intention(R); damage(R, V); using_judgment("#4")}3 :- use_object(R, V, "arma da fuoco"), 
+shoot(R, V, "volto").
+2{death_intention(R); using_judgment("#5")}2 :- stab(R, V, "addome"), part_of_body("addome"), 
+violence(R, V).
 3{death_intention(R); damage(R, V); using_judgment("#6")}3 :- throw(R, V, "sasso"), go_through(V, "auto").
-3{death_intention(R); damage(R, V); using_judgment("#7")}3 :- stab(R, V, "zona orbitale"), part_of_body(V, "zona orbitale").
+3{death_intention(R); damage(R, V); using_judgment("#7")}3 :- stab(R, V, "zona orbitale"), 
+part_of_body(V, "zona orbitale").
 2{death_intention(R); using_judgment("#8")}2 :- robbery(R, V), use_object(R, V, "arma da fuoco").
 2{murder(R, V); using_judgment("#9")}2 :- administer(R, V, N), medicine(N), cause_death(R, V).
 2{damage(R, V); using_judgment("#10")}2 :- stab(R, V).
 2{death_intention(R); using_judgment("#11")}2 :- caused_by(R, V, "alcol denaturato", "death"), substance("alcol denaturato").
 3{death_intention(R); damage(R, V); using_judgment("#12")}3 :- stab(R, V, "organi vitali"), part_of_body(V, "organi vitali").
-2{handicap(V); using_judgment("#13")}2 :- has_illness(V, "idrocefalo congenito"), illness("idrocefalo congenito").
+2{handicap(V); using_judgment("#13")}2 :- has_illness(V, "idrocefalo congenito"), 
+illness("idrocefalo congenito").
 2{handicap(V); using_judgment("#14")}2 :- has_illness(V, "affezione morbosa inguaribile"), illness("affezione morbosa inguaribile").</span></pre>
             </div>
             <div class="code-section">
