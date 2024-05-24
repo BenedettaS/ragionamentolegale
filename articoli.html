@@ -179,15 +179,7 @@
                 <pre>
 <span class="center-text"><b>Codice Penale Art. 56 - Tentativo di reato</b></span>
 Chi compie atti idonei, diretti in modo non equivoco a commettere un delitto, risponde di delitto tentato, se l'azione non si compie o l'evento non si verifica.
-<span class="highlight">attempted_crime(R, V, F) :- criminal_intention(R, F), not action(R), agent(R), agent(V), R != V.
-attempted_crime(R, V, F) :- criminal_intention(R, F), not event(V), agent(R), agent(V), R != V.
-
-criminal_intention(R, "murder") :- death_intention(R). 
-criminal_intention(R, "personal_injuries") :- injuries_intention(R).
-criminal_intention(R, "theft_snatch") :- theft_intention(R), not violence(R, V).
-criminal_intention(R, "robbery") :- theft_intention(R), violence(R, V).   
-
-attempted_personal_injuries(R, V, I) :- injuries_intention(R), damage(R, V), interruption(R), illness(I), agent(R), agent(V), R!=V.
+<span class="highlight">attempted_personal_injuries(R, V, I) :- injuries_intention(R), damage(R, V), interruption(R), illness(I), agent(R), agent(V), R!=V.
 attempted_personal_injuries(R, V, I) :- injuries_intention(R), damage(R, V), not derive_illness(V), danger_of_illness(V, I), illness(I), agent(R), agent(V), R!=V.
 attempted_serious_personal_injuries(R, V, I, "lesioni gravi") :- injuries_intention(R), damage(R, V), not derive_illness(V), danger_of_illness(V, I), illness(I), severity(2), agent(R), agent(V), R!=V.
 attempted_serious_personal_injuries(R, V, I, "lesioni gravissime") :- injuries_intention(R), damage(R, V), not derive_illness(V), danger_of_illness(V, I), illness(I), severity(3), agent(R), agent(V), R!=V.
