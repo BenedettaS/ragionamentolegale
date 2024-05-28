@@ -177,9 +177,52 @@
 
         <section>
             <div class="code-section">
+                <h2>Artt. 575-579</h2>
+                <pre>Si riportano i codici identificativi delle sentenze con le regole individuate in modo tale da fare riferimento a tali sentenze in caso di presenza degli stessi predicati.
+<span class="highlight">agent("R").
+agent("V").
+    
+%%% CODICI IDENTIFICATIVI SENTENZE ARTT. 575 - 579
+%  #1: Cassazione penale, sez. I, 05/10/2017, n. 56701
+%  #2: Cassazione penale, sez. I, 22/12/2017, n. 3619
+%  #3: Cassazione penale, sez. I, 29/01/2019, n. 16116
+%  #4: Tribunale Taranto sez. II, 14/10/2020, n. 795
+%  #5: Corte appello Ancona, 17/02/2021, n. 1604
+%  #6: Cassazione penale, sez. I, 30/03/2022, n. 29611
+%  #7: Cassazione penale, sez. I, 05/04/2022, n. 24173
+%  #8: Cassazione penale, sez. I, 21/07/2022, n. 40819
+%  #9: Cassazione penale, sez. I, sent., 23/12/2022 n. 48944
+% #10: Corte appello Ancona, 23/01/2023, n.2104
+% #11: Cassazione penale sez. I, 19/06/2023 n. 26316
+% #12: Tribunale Lecce sez. I, 13/07/2023, n.2529
+% #13: Corte assise Roma, 10/12/1983
+% #14: Corte assise Trieste, 02/05/1988 
+    
+2{aware_of_consequences(R); using_judgment("#1")}2 :- robbery(R, V), bind(R, V), gag(R, V).
+2{death_intention(R); using_judgment("#1")}2 :- aware_of_consequences(R).
+2{aware_of_consequences(R); using_judgment("#2")}2 :- robbery(R, V), obstruct(R, V, "naso"), 
+obstruct(R, V, "bocca").
+3{death_intention(R); damage(R, V); using_judgment("#3")}3:- stab(R, V), number_of_wounds(V, 11).
+3{death_intention(R); damage(R, V); using_judgment("#4")}3 :- use_object(R, V, "arma da fuoco"), 
+shoot(R, V, "volto").
+2{death_intention(R); using_judgment("#5")}2 :- stab(R, V, "addome"), part_of_body("addome"), 
+violence(R, V).
+3{death_intention(R); damage(R, V); using_judgment("#6")}3 :- throw(R, V, "sasso"), go_through(V, "auto").
+3{death_intention(R); damage(R, V); using_judgment("#7")}3 :- stab(R, V, "zona orbitale"), 
+part_of_body(V, "zona orbitale").
+2{death_intention(R); using_judgment("#8")}2 :- robbery(R, V), use_object(R, V, "arma da fuoco").
+2{murder(R, V); using_judgment("#9")}2 :- administer(R, V, N), medicine(N), cause_death(R, V).
+2{damage(R, V); using_judgment("#10")}2 :- stab(R, V).
+2{death_intention(R); using_judgment("#11")}2 :- caused_by(R, V, "alcol denaturato", "death"), substance("alcol denaturato").
+3{death_intention(R); damage(R, V); using_judgment("#12")}3 :- stab(R, V, "organi vitali"), part_of_body(V, "organi vitali").
+2{handicap(V); using_judgment("#13")}2 :- has_illness(V, "idrocefalo congenito"), 
+illness("idrocefalo congenito").
+2{handicap(V); using_judgment("#14")}2 :- has_illness(V, "affezione morbosa inguaribile"), illness("affezione morbosa inguaribile").</span></pre>
+            </div>
+            <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale, sez. I, 05/10/2017, n. 56701</b></span>
-Omicidio volontario per gli imputati che nel corso di una rapina imbavagliano la vittima che puoi muore per soffocamento
+Omicidio volontario per gli imputati che nel corso di una rapina imbavagliano la vittima che puoi muore per soffocamento.
 Affinché possa configurarsi il reato di omicidio preterintenzionale, anziché volontario, gli agenti devono aver escluso ogni possibile previsione dell'evento-morte. Diversamente, in presenza di piena consapevolezza delle conseguenze derivanti dall'azione posta in essere, si configura il reato di omicidio volontario (confermata la condanna degli imputati per i reati di omicidio volontario e rapina ai danni di un anziano il quale, legato ed imbavagliato, decedeva per soffocamento).
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">robbery("R", "V").
@@ -201,7 +244,7 @@ cause_death("R", "V").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale, sez. I, 22/12/2017, n. 3619</b></span>
-È colpevole anche di omicidio volontario il rapinatore occludendo naso e bocca della vittima ne cagiona la morte
+È colpevole anche di omicidio volontario il rapinatore occludendo naso e bocca della vittima ne cagiona la morte.
 Si configura il delitto di omicidio volontario – e non quello di omicidio preterintenzionale, caratterizzato dalla totale assenza di volontà omicida – qualora la condotta dell'agente, alla stregua delle regole di comune esperienza, dimostri la consapevole accettazione da parte del medesimo anche solo dell'eventualità che dal suo comportamento potesse derivare la morte del soggetto passivo. (Fattispecie in cui i colpevoli, nel corso di una rapina commessa nell'abitazione di una persona anziana, le avevano oppresso ed occluso il naso e la bocca con un cuscino ed un canovaccio, impedendole di respirare e cagionandone la morte, intervenuta per soffocamento).
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">robbery("R", "V").
@@ -239,7 +282,7 @@ number_of_wounds("V", 11).
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Tribunale Taranto sez. II, 14/10/2020, n.795</b></span>
-Costituiscono elementi fattuali sintomatici dell'animus nocendi dell'imputato per tentato omicidio, integrante il dolo intenzionale di omicidio, l'aver utilizzato nella propria azione una pistola, arma maggiormente offensiva per causare la morte, l'aver sparato in un distretto vitale quale il volto e l'elevato numero di colpi esplosi (nel caso di specie 5)
+Costituiscono elementi fattuali sintomatici dell'animus nocendi dell'imputato per tentato omicidio, integrante il dolo intenzionale di omicidio, l'aver utilizzato nella propria azione una pistola, arma maggiormente offensiva per causare la morte, l'aver sparato in un distretto vitale quale il volto e l'elevato numero di colpi esplosi (nel caso di specie 5).
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">use_object("R", "V", "arma da fuoco").
 shoot("R", "V", "volto").
@@ -345,7 +388,7 @@ defense("V").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. I, 21/07/2022, n.40819</b></span>
-L'accordo di commettere la rapina con arma da fuoco comporta il concorso ordinario nel delitto di omicidio
+L'accordo di commettere la rapina con arma da fuoco comporta il concorso ordinario nel delitto di omicidio.
 La partecipazione all'accordo per commettere una rapina utilizzando un'arma da fuoco comporta la responsabilità, a titolo di concorso ordinario e non anomalo, anche per l'omicidio (o il tentato omicidio) commesso nel corso della sua esecuzione dal complice che ha in concreto cagionato la morte del rapinato dovendosi ritenere prevedibile detto evento lesivo, quale ordinario possibile sviluppo della condotta criminosa qualificata dall'uso delle armi.
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">robbery("R", "V").
@@ -389,7 +432,7 @@ cause_death("R", "V").</span>
             <div class="code-section">
                 <pre>
 <span class="center-text"><b>Corte appello Ancona, 23/01/2023, n.2104</b></span>
-La volontarietà del fendente inferto alla vittima esclude la sussistenza delle lesioni personali colpose
+La volontarietà del fendente inferto alla vittima esclude la sussistenza delle lesioni personali colpose.
 Non può ritenersi sussistente il reato di lesioni personali colpose, sussistendo quello di tentato omicidio, quando dalla ricostruzione dinamica del fendente inferto alla vittima, si evinca chiaramente la volontarietà della condotta, finalizzata a trafiggere la vittima e togliergli la vita.
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V").
@@ -547,7 +590,7 @@ cause_death("R", "V").
         <div class="code-section">
             <pre>
 <span class="center-text"><b>Cassazione penale sez. I, 26/05/2017, n.3392</b></span>
-Esclusa l'ipotesi di omicidio del consenziente se la vittima versa in condizioni patologiche di deficienza psichica
+Esclusa l'ipotesi di omicidio del consenziente se la vittima versa in condizioni patologiche di deficienza psichica.
 Secondo quanto disposto dall'art. 579, comma 3, n. 2, c.p., deve trovare applicazione la disposizione relativa all'omicidio volontario allorché il fatto sia commesso in danno di una persona che versi in condizioni (patologiche) di deficienza psichica.
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">handicap("V").

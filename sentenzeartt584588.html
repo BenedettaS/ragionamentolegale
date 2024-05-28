@@ -177,6 +177,28 @@
 
         <section>
             <div class="code-section">
+            <h2>Artt. 584-588</h2>
+                <pre>
+Si riportano i codici identificativi delle sentenze con le regole individuate in modo tale da fare riferimento a tali sentenze in caso di presenza degli stessi predicati.
+<span class="highlight">agent("R").
+agent("V").
+    
+%%% CODICI IDENTIFICATIVI SENTENZE ARTT. 584 - 588
+%  #1: Cassazione penale, sez. V, 21/09/2016, n. 44986
+%  #2: Cassazione penale, sez. V, 27/09/2022, n. 46467
+%  #3: Cassazione penale, sez. V, 06/12/2022, n. 11670
+%  #4: Cassazione penale, sez. II, 22/11/2023, n. 890
+%  #5: Cassazione penale, sez. I, 07/04/2016, n. 30215
+
+2{sadomasochistic_practises(R, V); using_judgment("#1")}2 :- breath_playing(R, V).
+2{sadomasochistic_practises(R, V); using_judgment("#1")}2 :- bondage(R, V).
+2{negligence(R); using_judgment("#1")}2 :- sadomasochistic_practises(R, V), not harmful_intention(R).
+2{damage(R, V); using_judgment("#2")} :- assault(R, V).
+2{damage(R, V); using_judgment("#3")} :- shake(R, V).
+2{damage(R, V); using_judgment("#4")} :- immobilize(R, V), gag(R, V).
+2{harmful_intention(G); using_judgment("#5")} :- harmful_intention(R), agent(R), part_of(R, G).</span></pre>
+        </div>
+            <div class="code-section">
                 <pre>
 <span class="center-text"><b>Cassazione penale sez. I, 12/03/2014, n.14647</b></span>
 In tema di reati contro la persona, l'omicidio preterintenzionale si configura allorquando l'azione aggressiva dell'autore del reato sia diretta soltanto a percuotere la vittima o a causarle lesioni, così che la morte costituisce un evento non voluto, ancorché legato da nesso causale alla condotta dell'agente. 
