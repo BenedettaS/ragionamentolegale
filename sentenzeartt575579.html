@@ -204,7 +204,7 @@ agent("V").
 obstruct(R, V, "bocca").
 3{death_intention(R); damage(R, V); using_judgment("#3")}3:- stab(R, V), number_of_wounds(V, 11).
 3{death_intention(R); damage(R, V); using_judgment("#4")}3 :- use_object(R, V, "arma da fuoco"), 
-shoot(R, V, "volto").
+shoot(R, V, "volto", 5), number_of_shots(V, 5).
 2{death_intention(R); using_judgment("#5")}2 :- stab(R, V, "addome"), part_of_body("addome"), 
 violence(R, V).
 3{death_intention(R); damage(R, V); using_judgment("#6")}3 :- throw(R, V, "sasso"), go_through(V, "auto").
@@ -213,7 +213,7 @@ part_of_body(V, "zona orbitale").
 2{death_intention(R); using_judgment("#8")}2 :- robbery(R, V), use_object(R, V, "arma da fuoco").
 2{murder(R, V); using_judgment("#9")}2 :- administer(R, V, N), medicine(N), cause_death(R, V).
 2{damage(R, V); using_judgment("#10")}2 :- stab(R, V).
-2{death_intention(R); using_judgment("#11")}2 :- caused_by(R, V, "alcol denaturato", "death"), substance("alcol denaturato").
+2{death_intention(R); using_judgment("#11")}2 :- caused_by(R, V, "alcol denaturato", "ustione"), substance("alcol denaturato").
 3{death_intention(R); damage(R, V); using_judgment("#12")}3 :- stab(R, V, "organi vitali"), part_of_body(V, "organi vitali").
 2{handicap(V); using_judgment("#13")}2 :- has_illness(V, "idrocefalo congenito"), 
 illness("idrocefalo congenito").
@@ -269,7 +269,7 @@ In tema di delitti contro la persona, per distinguere il reato di lesione person
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V").
 number_of_wounds("V", 11).
-:- cause_death("R", "V"). % si può omettere</span>
+not cause_death("R", "V"). % si può omettere</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         attempted_murder("R", "V")
     },{
@@ -285,16 +285,17 @@ number_of_wounds("V", 11).
 Costituiscono elementi fattuali sintomatici dell'animus nocendi dell'imputato per tentato omicidio, integrante il dolo intenzionale di omicidio, l'aver utilizzato nella propria azione una pistola, arma maggiormente offensiva per causare la morte, l'aver sparato in un distretto vitale quale il volto e l'elevato numero di colpi esplosi (nel caso di specie 5).
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">use_object("R", "V", "arma da fuoco").
-shoot("R", "V", "volto").
-    
-:- cause_death("R", "V"). % si può omettere</span>
+shoot("R", "V", "volto", 5).
+number_of_shots("V", 5).    
+not cause_death("R", "V"). % si può omettere</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         attempted_murder("R", "V")
     },{
         cause_death("R", "V")
     },{
         use_object("R", "V", "arma da fuoco").
-        shoot("R", "V", "volto").
+        shoot("R", "V", "volto", 5).
+        number_of_shots("V", 5).
     }).</span></pre>
             </div>
             <div class="code-section">
@@ -306,9 +307,7 @@ Per la distinzione tra il reato di lesioni personali e quello di tentato omicidi
 stab("R", "V", "addome").
 part_of_body("addome").
 violence("R", "V").
-:- cause_death("R", "V").
-    
-:- death_intention(R), personal_injuries(R, V, I).</span>
+not cause_death("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         attempted_murder("R", "V")
     },{
@@ -357,7 +356,7 @@ In tema di tentato omicidio, è configurabile il dolo diretto nella condotta del
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">throw("R", "V", "sasso").
 go_through("V", "auto").
-:- cause_death("R", "V").</span>
+not cause_death("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         attempted_murder("R", "V")
     },{
@@ -410,7 +409,7 @@ cause_death("R", "V").</span>
 È configurabile il dolo diretto del delitto di omicidio nella condotta del medico, non orientata da finalità terapeutiche, anche solo di natura palliativa, che somministri arbitrariamente al paziente farmaci sedativi e anestetici con esito letale, a nulla rilevando la finalità eutanasica del trattamento.
 Integra il reato di omicidio volontario la somministrazione di trattamenti di medicina palliativa, dai quali consegua, anche come anticipazione secondaria, la morte del paziente, nel caso in cui non siano ritualmente adottati i relativi protocolli terapici e le cure siano somministrate in assenza della una previa accurata anamnesi del dolore e dell'acquisizione del consenso libero, consapevole e informato dell'interessato.
 
-<span class="center-text"><b>Codice ASP</b></span><span class="highlight">:- consent("V").
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">not consent("V").
 administer("R", "V", "farmaci sedativi").
 administer("R", "V", "farmaci anestetici").
 medicine("farmaci sedativi").
@@ -436,7 +435,7 @@ La volontarietà del fendente inferto alla vittima esclude la sussistenza delle 
 Non può ritenersi sussistente il reato di lesioni personali colpose, sussistendo quello di tentato omicidio, quando dalla ricostruzione dinamica del fendente inferto alla vittima, si evinca chiaramente la volontarietà della condotta, finalizzata a trafiggere la vittima e togliergli la vita.
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V").
-:- cause_death("R", "V").
+not cause_death("R", "V").
 death_intention("R").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         attempted_murder("R", "V")
@@ -453,7 +452,7 @@ death_intention("R").</span>
 <span class="center-text"><b>Cassazione penale sez. I, 19/06/2023 n. 26316</b></span>
 In tema di elemento soggettivo del reato, non sussiste incompatibilità tra dolo d'impeto e dolo eventuale, in quanto l'agire sulla spinta emotiva del momento non esclude la lucidità mentale e le facoltà cognitive che consentono di prevedere e accettare il rischio della verificazione dell'evento quale conseguenza della propria azione. (Fattispecie in materia di omicidio, commesso mediante lo spruzzo di alcol denaturato all'altezza del tronco della vittima mentre questa si trovava ai fornelli).
 
-<span class="center-text"><b>Codice ASP</b></span><span class="highlight">caused_by("R", "V", "alcol denaturato", "death").
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">caused_by("R", "V", "alcol denaturato", "ustione").
 substance("alcol denaturato").
 cause_death("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
@@ -461,7 +460,7 @@ cause_death("R", "V").</span>
     },{
         
     },{
-        caused_by("R", "V", "alcol denaturato", "death").
+        caused_by("R", "V", "alcol denaturato", "ustione").
         substance("alcol denaturato").
         cause_death("R", "V").
     }).</span></pre>
@@ -474,7 +473,7 @@ In tema di tentato omicidio sotto il profilo dell'idoneità oggettiva dell'avven
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V", "organi vitali").
 part_of_body("V", "organi vitali").
 resistence("V", "R").
-:- cause_death("R", "V").</span>
+not cause_death("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         attempted_murder("R", "V")
     },{
@@ -497,7 +496,7 @@ derive_illness("V").
 illness("contusion").
 cause_death("R", "V").
 death_intention("R").
-:- consent("V").    </span>
+not consent("V").    </span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         murder("R", "V")
     },{
@@ -547,7 +546,7 @@ has_illness("V", "affezione morbosa inguaribile").
 illness("affezione morbosa inguaribile").
 cause_death("R", "V").
 death_intention("R").
-:- incapacity_understanding("V").
+not incapacity_understanding("V").
 
 :- handicap(V), incapacity_understanding(V), consent(V).</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
