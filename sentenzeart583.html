@@ -200,7 +200,7 @@ mental_illness("alterazione psicopatica").
 derive_illness("V").
 derive("V", "alterazione psicopatica").
 damage("R", "V").
-severity(3).</span>
+severity("alterazione psicopatica", 3).</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         serious_personal_injuries("R", "V", "alterazione psicopatica", "lesioni gravissime")
     },{
@@ -211,7 +211,7 @@ severity(3).</span>
         damage("R", "V").
         derive_illness("V").
         derive("V", "alterazione psicopatica").
-        severity(3).
+        severity("alterazione psicopatica", 3).
     }). </span></pre>
             </div>
             <div class="code-section">
@@ -631,7 +631,7 @@ organ("timpano").</span>
 <span class="center-text"><b>Tribunale Trieste, 19/09/2022, n.1443</b></span>
 Incorrono nell'imputazione per il reato p. e p. dagli artt. 582 e 583 comma c.p. i prevenuti che in concorso di volontà e/o azione tra di loro, con più azioni esecutive di un medesimo disegno criminoso, cagionavano lesioni personali ad un'altra persona, dapprima aggredendola afferrandolo al collo e colpendolo con un pugno al viso e poi scagliandosi contro un altro soggetto intervenuto per soccorrere la p.o. cagionando loro lesioni gravi con incapacità di attendere alle ordinarie occupazioni per oltre 40 gg.
 
-<span class="center-text"><b>Codice ASP</b></span><span class="highlight">severity(2).
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">severity("lesione", 2).
 illness("lesione").
 derive_illness("V").
 derive("V", "lesione").
@@ -644,7 +644,7 @@ harmful_intention("R").</span>
     },{
         serious_personal_injuries("R", "V", "lesione", "lesioni gravissime")
     },{
-        severity(2).
+        severity("lesione", 2).
         illness("lesione").
         derive_illness("V").
         derive("V", "lesione").
@@ -659,7 +659,7 @@ harmful_intention("R").</span>
 In tema di nesso causale, in presenza di patologie riconducibili a più fattori causali diversi e alternativi tra loro, l'applicazione della regola di giudizio compendiata nella formula "al di là di ogni ragionevole dubbio", di cui all'art. 533 c.p.p., consente di pronunciare condanna a condizione che, in base al dato probatorio acquisito, la realizzazione dell'ipotesi alternativa, nella fattispecie concreta, risulti priva del benché minimo riscontro nelle emergenze processuali, ponendosi al di fuori dell'ordine naturale delle cose e della normale razionalità umana (confermata, nella specie, la condanna dell'imputato per il delitto di lesioni personali gravissime, avendo egli consumato ripetuti rapporti sessuali non protetti con il compagno nell'arco di dieci anni, con la consapevolezza di essere affetto da virus HIV e sottacendo tale circostanza al partner e accettando, in tal modo, il rischio del contagio e delle conseguenti lesioni personali per il partner).
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">illness("H.I.V.").
-severity(3). % untreatable_illness
+severity("H.I.V.", 3). % untreatable_illness
 derive_illness("V").
 derive("V", "H.I.V.").
 damage("R", "V").
@@ -670,7 +670,7 @@ harmful_intention("R").</span>
         serious_personal_injuries("R", "V", "H.I.V.", "lesioni gravi")
     },{
         illness("H.I.V.").
-        severity(3). % untreatable_illness
+        severity("H.I.V.", 3). % untreatable_illness
         derive_illness("V").
         derive("V", "H.I.V.").
         damage("R", "V").
