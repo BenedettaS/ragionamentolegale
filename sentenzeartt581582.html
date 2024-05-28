@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sentenze artt. 581-582</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital, wght@0, 400..800;1, 400..800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
 
         html, body {
@@ -226,22 +226,25 @@ Integra il delitto di tentate lesioni personali gravissime (pericolo di causazio
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">injuries_intention("R").
 illness("H.I.V.").
+severity("H.I.V.", 3).
 hit("R", "V").
 use_object("R", "V", "ago").
 danger_of_illness("V", "H.I.V.").
 :- derive_illness("V"). % si può omettere
 damage(R, V) :- hit(R, V), use_object(R, V, O).</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
-        attempted_personal_injuries("r","v","H.I.V."), 
-        damage("r","v")
-    },{
-        derive_illness("v")
-    },{
-        harmful_intention("r").
+        attempted_personal_injuries("R", "V", "H.I.V."), 
+        attempted_serious_personal_injuries("R", "V", "H.I.V.", "lesioni gravissime"), 
+        damage("R", "V")
+    }, {
+        derive_illness("V")
+    }, {
+        harmful_intention("R").
         illness("H.I.V.").
-        hit("r","v").
-        use_object("r","v","ago").
-        danger_of_illness("v","H.I.V.").
+        severity("H.I.V.", 3).
+        hit("R", "V").
+        use_object("R", "V", "ago").
+        danger_of_illness("V", "H.I.V.").
     }).</span></pre>
             </div>
             <div class="code-section">
@@ -536,13 +539,13 @@ derive("V", "acufene").
 harmful_intention("R").
 damage("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
-    personal_injuries("R", "V", "acufene"),
+    personal_injuries("R", "V", "acufene"), 
     derive_illness("V")
-},{
+}, {
     
-},{
+}, {
     illness("acufene").
-    derive("V","acufene").
+    derive("V", "acufene").
     harmful_intention("R").
     damage("R", "V").
 }).</span></pre>
@@ -560,11 +563,11 @@ severity("illness", 3).
 injuries_intention("R").
 threat("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
-        attempted_serious_personal_injuries("R","V","illness","lesioni gravissime"),
+        attempted_serious_personal_injuries("R", "V", "illness", "lesioni gravissime"), 
         attempted_crime("R", "V", "serious_personal_injuries")
-    },{
+    }, {
 
-    },{
+    }, {
         interruption("R").
         damage("R", "V").
         danger_of_illness("V", "illness").
@@ -817,7 +820,7 @@ derive("V", "ansia").
 derive_illness("V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
         robbery("R", "V"), 
-        personal_injuries("R", "V", "ansia"),
+        personal_injuries("R", "V", "ansia"), 
         harmful_intention("R")
     }, {
 
