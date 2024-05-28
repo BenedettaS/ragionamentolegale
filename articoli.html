@@ -309,8 +309,7 @@ reo(G1, "affray") :- affray(G, G1), agent(R1), part_of(R1, G1).
 reo(R, "affray") :- affray(G, G1), agent(R), part_of(R, G).
 reo(R1, "affray") :- affray(G, G1), agent(R1), part_of(R1, G1).     
 
-affray(G, G1) :- harmful_intention(G), harmful_intention(G1), agent(R), agent(R1), agent(R2), 
-    part_of(R,G), part_of(R1,G), part_of(R2,G1), R!=R1, R1!=R2, R2!=R, G!=G1.
+affray(G, G1) :- harmful_intention(G), harmful_intention(G1), group(G), group(G1), G!=G1.
 
 group(G) :- agent(R), agent(R1), agent(R2), part_of(R,G), part_of(R1,G), part_of(R2,G1), R != R1, 
     R1 != R2, R2 != R.
