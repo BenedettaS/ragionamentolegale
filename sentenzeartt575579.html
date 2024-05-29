@@ -205,16 +205,16 @@ obstruct(R, V, "bocca").
 3{death_intention(R); damage(R, V); using_judgment("#3")}3:- stab(R, V), number_of_wounds(V, 11).
 3{death_intention(R); damage(R, V); using_judgment("#4")}3 :- use_object(R, V, "arma da fuoco"), 
 shoot(R, V, "volto", 5), number_of_shots(V, 5).
-2{death_intention(R); using_judgment("#5")}2 :- stab(R, V, "addome"), part_of_body("addome"), 
+2{death_intention(R); using_judgment("#5")}2 :- stab_body(R, V, "addome"), part_of_body("addome"), 
 violence(R, V).
 3{death_intention(R); damage(R, V); using_judgment("#6")}3 :- throw(R, V, "sasso"), go_through(V, "auto").
-3{death_intention(R); damage(R, V); using_judgment("#7")}3 :- stab(R, V, "zona orbitale"), 
+3{death_intention(R); damage(R, V); using_judgment("#7")}3 :- stab_body(R, V, "zona orbitale"), 
 part_of_body(V, "zona orbitale").
 2{death_intention(R); using_judgment("#8")}2 :- robbery(R, V), use_object(R, V, "arma da fuoco").
 2{murder(R, V); using_judgment("#9")}2 :- administer(R, V, N), medicine(N), cause_death(R, V).
 2{damage(R, V); using_judgment("#10")}2 :- stab(R, V).
 2{death_intention(R); using_judgment("#11")}2 :- caused_by(R, V, "alcol denaturato", "ustione"), substance("alcol denaturato").
-3{death_intention(R); damage(R, V); using_judgment("#12")}3 :- stab(R, V, "organi vitali"), part_of_body(V, "organi vitali").
+3{death_intention(R); damage(R, V); using_judgment("#12")}3 :- stab_body(R, V, "organi vitali"), part_of_body(V, "organi vitali").
 2{handicap(V); using_judgment("#13")}2 :- has_illness(V, "idrocefalo congenito"), 
 illness("idrocefalo congenito").
 2{handicap(V); using_judgment("#14")}2 :- has_illness(V, "affezione morbosa inguaribile"), illness("affezione morbosa inguaribile").</span></pre>
@@ -304,7 +304,7 @@ not cause_death("R", "V"). % si può omettere</span>
 Per la distinzione tra il reato di lesioni personali e quello di tentato omicidio rileva il diverso atteggiamento psicologico dell'agente e la potenzialità lesiva delle azioni. Per il primo l'offensività del reato si esaurisce con l'evento realizzato; nel secondo invece l'azione tende ed è idonea a causare la lesione di un bene giuridico superiore, la cui mancata realizzazione prescinde dalla volontà dell'agente. Nel caso di specie l'aver sferrato, mediante un coltello con lama 15 cm e con grande violenza, due coltellate all'addome della p.o. costituisce condotta idonea e diretta a causare la morte della stessa, di talché la condotta non è idonea ad essere derubricata nel reato di lesioni personali.
 
 <span class="center-text"><b>Codice ASP</b></span><span class="highlight">damage("R", "V").
-stab("R", "V", "addome").
+stab_body("R", "V", "addome").
 part_of_body("addome").
 violence("R", "V").
 not cause_death("R", "V").</span>
@@ -315,7 +315,7 @@ not cause_death("R", "V").</span>
         cause_death("R", "V")
     },{
         damage("R", "V").
-        stab("R", "V", "addome").
+        stab_body("R", "V", "addome").
         part_of_body("addome").
         violence("R", "V").
     }).
@@ -371,7 +371,7 @@ not cause_death("R", "V").</span>
 <span class="center-text"><b>Cassazione penale sez. I, 05/04/2022, n.24173</b></span>
 In tema di delitti contro la persona, per distinguere il reato di lesione personale da quello di tentato omicidio occorre avere riguardo sia al diverso atteggiamento psicologico dell'agente sia alla differente potenzialità dell'azione lesiva, desumibili dalla sede corporea attinta, dall'idoneità dell'arma impiegata, nonché dalle modalità dell'atto lesivo. (Fattispecie in cui la Corte ha ritenuto sussistente il delitto di tentato omicidio per avere l'agente colpito la vittima alla zona orbitale con un cacciavite, penetrato nell'encefalo in modo obliquo solo per il movimento difensivo di questa).
 
-<span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V", "zona orbitale").
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab_body("R", "V", "zona orbitale").
 part_of_body("V", "zona orbitale").
 defense("V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
@@ -379,7 +379,7 @@ defense("V").</span>
     },{
 
     },{
-        stab("R", "V", "zona orbitale").
+        stab_body("R", "V", "zona orbitale").
         part_of_body("V", "zona orbitale").
         defense("V").
     }).</span></pre>
@@ -470,7 +470,7 @@ cause_death("R", "V").</span>
 <span class="center-text"><b>Tribunale Lecce sez. I, 13/07/2023, n.2529</b></span>
 In tema di tentato omicidio sotto il profilo dell'idoneità oggettiva dell'avvenuta aggressione a determinare le conseguenze letali ipotizzate dall'accusa, è evidente come un plurimo accoltellamento in direzione del fianco della vittima, con parte dei colpi andati a segno e parte parati dagli arti dell'aggredito sia condotta eziologicamente adeguata, già in via astratta, a determinare la morte del destinatario, in ragione della presenza di organi vitali nella zona presa di mira.
 
-<span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab("R", "V", "organi vitali").
+<span class="center-text"><b>Codice ASP</b></span><span class="highlight">stab_body("R", "V", "organi vitali").
 part_of_body("V", "organi vitali").
 resistence("V", "R").
 not cause_death("R", "V").</span>
@@ -479,7 +479,7 @@ not cause_death("R", "V").</span>
     },{
         cause_death("R", "V")
     },{
-        stab("R", "V", "organi vitali").
+        stab_body("R", "V", "organi vitali").
         part_of_body("V", "organi vitali").
         resistence("V", "R").
     }).</span></pre>
