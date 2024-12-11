@@ -247,7 +247,7 @@ Tale disposizione non si applica quando la legge considera la violenza come elem
 <span class="highlight">reo(R, "beatings") :- beatings(R, V).
 victim(V, "beatings") :- beatings(R, V).
 
-beatings(R, V) :- damage(R, V), harmful_intention(R), not derive_illness(V), agent(R), agent(V), R!=V.</span></pre>
+beatings(R, V) :- harmful_intention(R), damage(R, V), not derive_illness(V), agent(R), agent(V), R!=V.</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 582</h2>
@@ -261,7 +261,7 @@ victim(V, "personal_injuries") :- personal_injuries(R, V, I).
 illness(I) :- physical_illness(I).
 illness(I) :- mental_illness(I).
     
-personal_injuries(R, V, I) :- damage(R, V), harmful_intention(R), derive_illness(V), derive(V, I), agent(R), agent(V), illness(I), R!=V.</span></pre>
+personal_injuries(R, V, I) :- harmful_intention(R), damage(R, V), derive_illness(V), derive(V, I), illness(I), agent(R), agent(V), R!=V.</span></pre>
             </div>
             <div class="code-section">
                 <h2>Articolo 583</h2>
