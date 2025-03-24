@@ -770,14 +770,27 @@ derive("V", "ansia").
 harmful_intention("R").
 damage("R", "V").</span>
 <span class="center-text"><b>Codice ILASP</b></span><span class="highlight">#pos({
-        beatings("R", "V"), 
-        damage("R", "V")
+        personal_injuries("R", "V", "ansia"), 
+        derive_illness("V") 
     }, {
+        beatings("R", "V")
+    }, {
+        damage("R", "V").
+        mental_illness("ansia"). 
+        derive("V", "ansia"). 
+        harmful_intention("R"). 
+    }).
+
+#pos({
+        personal_injuries("R", "V", "insonnia"), 
         derive_illness("V")
     }, {
+        beatings("R", "V")
+    }, {
+        damage("R", "V").
+        mental_illness("insonnia"). 
+        derive("V", "insonnia"). 
         harmful_intention("R"). 
-        use_object("R", "V", "oggetto").
-        blunt("oggetto").
     }).</span></pre>
             </div>
             <div class="code-section">
